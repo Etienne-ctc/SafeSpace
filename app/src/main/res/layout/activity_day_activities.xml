@@ -7,76 +7,76 @@
     tools:context=".DayActivitiesPatient">
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/a_checkBox"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="43dp"
         android:layout_marginEnd="34dp"
-        android:text="CheckBox"
+        android:text="Sortir 10 minutes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/todo_textView" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/b_checkBox"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="34dp"
-        android:text="CheckBox"
+        android:text="Prendre une douche"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/a_checkBox" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/c_checkBox"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="34dp"
-        android:text="CheckBox"
+        android:text="Faire de l'activité physique"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/b_checkBox" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/d_checkBox"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="34dp"
-        android:text="CheckBox"
+        android:text="s'hydrater"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintTop_toBottomOf="@+id/c_checkBox" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/e_checkBox"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="34dp"
-        android:text="CheckBox"
+        android:text="Faire son lit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintTop_toBottomOf="@+id/d_checkBox" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/f_checkBox"
         android:layout_width="355dp"
         android:layout_height="52dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="34dp"
-        android:text="CheckBox"
+        android:text="Lire un livre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+        app:layout_constraintTop_toBottomOf="@+id/e_checkBox" />
 
     <TextView
         android:id="@+id/todo_textView"

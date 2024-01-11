@@ -17,8 +17,8 @@ public class Patient extends User{
     public void addActivities(Activities act){
         activities.add(act);
     }
-    public void removeActivities(Activities act){
-        activities.remove(act);
+    public void updateActivities(Activities act){
+        //to do
     }
     public void addStatistics(String name, StatisticsValues stats){
         //to do

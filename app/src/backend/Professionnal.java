@@ -20,4 +20,11 @@ public class Professionnal extends User{
     public void removePatient(Patient patient){
         //to do
     }
+    public void addRdv(Date date,Patient patient ){
+        //to do
+    }
+    public void removeRdv(Date date,Patient patient ){
+        //to do
+    }
+    
 }

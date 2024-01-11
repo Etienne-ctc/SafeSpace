@@ -12,7 +12,9 @@ public class Statistics {
     public void addValues(StatisticsValues val){
         values.add(val);
     }
-
+    public void removeValues(StatisticsValues val){
+        values.remove(val);
+    }
     public ArrayList<StatisticsValues> getValues() {
         return values;
     }

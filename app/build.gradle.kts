@@ -49,4 +49,6 @@ dependencies {
     implementation("androidx.camera:camera-extensions:1.1.0-beta02")
     implementation("com.google.mlkit:vision-common:17.1.0")
     implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0")
+    implementation("androidmads.library.qrgenearator:QRGenearator:1.0.3")
+    //implementation("com.github.androidmads:QRGenerator:1.0.1")
 }

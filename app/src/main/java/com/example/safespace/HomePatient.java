@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class HomePatient extends AppCompatActivity {
     private Button param;
@@ -13,6 +14,7 @@ public class HomePatient extends AppCompatActivity {
     private Button devoirs;
     private Button humeur;
     private Button sommeil;
+    private TextView addPro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,15 @@ public class HomePatient extends AppCompatActivity {
             public void onClick(View v) {
                 Intent sommeil_intent = new Intent(HomePatient.this, SommeilPatient.class);
                 startActivity(sommeil_intent);
+            }
+        });
+
+        addPro = findViewById(R.id.addPro_textView);
+        addPro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent code_patient = new Intent(HomePatient.this, QRCodePatient.class);
+                startActivity(code_patient);
             }
         });
     }

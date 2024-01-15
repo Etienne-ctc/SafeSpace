@@ -44,6 +44,7 @@ public class QRCodePatient extends AppCompatActivity {
         test = findViewById(R.id.qrCode_editText);
         previewView = findViewById(R.id.cameraPreview);
 
+        // Gestion des permissions pour utiliser la camera
         if(ContextCompat.checkSelfPermission(QRCodePatient.this, permission) == PackageManager.PERMISSION_GRANTED){
             init();
         }
@@ -52,6 +53,7 @@ public class QRCodePatient extends AppCompatActivity {
         }
     }
 
+    // Si permission d'utiliser la cam -> init de la cam
     private void init(){
         cameraProviderListenableFuture = ProcessCameraProvider.getInstance(QRCodePatient.this);
         cameraProviderListenableFuture.addListener(new Runnable() {
@@ -67,6 +69,7 @@ public class QRCodePatient extends AppCompatActivity {
         },ContextCompat.getMainExecutor(QRCodePatient.this));
     }
 
+    // Gestion du retour de la requete de permission
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -79,6 +82,7 @@ public class QRCodePatient extends AppCompatActivity {
         }
     }
 
+    // Récuperer le contenu du QR code et l'envoyer dans la BDD (pour les test bind dans un textView)
     private void bindImageAnalysis(ProcessCameraProvider processCameraProvider){
         ImageAnalysis imageAnalysis = new ImageAnalysis.Builder().setTargetResolution(new Size(1280, 720))
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST).build();
@@ -90,12 +94,13 @@ public class QRCodePatient extends AppCompatActivity {
                 if(mediaImage!=null){
                     InputImage image2 = InputImage.fromMediaImage(mediaImage, image.getImageInfo().getRotationDegrees());
                     BarcodeScanner scanner = BarcodeScanning.getClient();
+                    //Gestion du contenu scanner
                     Task<List<Barcode>> results = scanner.process(image2);
                     results.addOnSuccessListener(new OnSuccessListener<List<Barcode>>() {
                         @Override
                         public void onSuccess(List<Barcode> barcodes) {
 
-                            //Value returned by BARCODE
+                            //Value returned by BARCODE -> send to BDD
                             for(Barcode barcode : barcodes){
                                 final String getValue = barcode.getRawValue();
                                 test.setText(getValue);

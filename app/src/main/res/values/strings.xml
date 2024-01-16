@@ -4,6 +4,8 @@
     <string name="enter_your_info">Enter your info</string>
     <string name="generate_qr_code">Generate QR Code</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

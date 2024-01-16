@@ -15,6 +15,7 @@ public class HomePatient extends AppCompatActivity {
     private Button humeur;
     private Button sommeil;
     private TextView addPro;
+    private Button cal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,15 @@ public class HomePatient extends AppCompatActivity {
             public void onClick(View v) {
                 Intent code_patient = new Intent(HomePatient.this, QRCodePatient.class);
                 startActivity(code_patient);
+            }
+        });
+
+        cal = findViewById(R.id.calendrier_button);
+        cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cal_patient = new Intent(HomePatient.this, CalendrierPatient.class);
+                startActivity(cal_patient);
             }
         });
     }

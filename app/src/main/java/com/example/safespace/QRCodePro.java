@@ -13,9 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.zxing.WriterException;
+
 import java.util.concurrent.ExecutionException;
-import androidmads.library.qrgenearator.QRGContents;
-import androidmads.library.qrgenearator.QRGEncoder;
 
 public class QRCodePro extends AppCompatActivity {
     private ImageView qrCodeIV;
@@ -45,7 +46,7 @@ public class QRCodePro extends AppCompatActivity {
                 } else {
                     // below line is for getting
                     // the windowmanager service.
-                    WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);.
+                    WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
                     Display display = manager.getDefaultDisplay();
 
                     // creating a variable for point which
@@ -60,17 +61,9 @@ public class QRCodePro extends AppCompatActivity {
                     // setting this dimensions inside our qr code
                     // encoder to generate our qr code.
                     qrgEncoder = new QRGEncoder(dataEdt.getText().toString(), null, QRGContents.Type.TEXT, dimen);
-                    try {
-                        // getting our qrcode in the form of bitmap.
-                        bitmap = qrgEncoder.encodeAsBitmap();
-                        // the bitmap is set inside our image
-                        // view using .setimagebitmap method.
-                        qrCodeIV.setImageBitmap(bitmap);
-                    } catch (ExecutionException e) {
-                        // this method is called for
-                        // exception handling.
-                        Log.e("Tag", e.toString());
-                    }
+                    //bitmap = qrgEncoder.encodeAsBitmap();
+                    bitmap = qrgEncoder.getBitmap();
+                    qrCodeIV.setImageBitmap(bitmap);
                 }
             }
         });

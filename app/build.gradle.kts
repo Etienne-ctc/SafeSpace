@@ -36,6 +36,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.preference:preference:1.2.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -49,6 +50,7 @@ dependencies {
     implementation("androidx.camera:camera-extensions:1.1.0-beta02")
     implementation("com.google.mlkit:vision-common:17.1.0")
     implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0")
-    implementation("androidmads.library.qrgenearator:QRGenearator:1.0.3")
+    //implementation("androidmads.library.qrgenearator:QRGenearator:1.0.3")
     //implementation("com.github.androidmads:QRGenerator:1.0.1")
+    implementation("com.google.zxing:core:3.5.0")
 }

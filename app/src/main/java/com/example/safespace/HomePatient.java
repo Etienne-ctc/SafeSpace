@@ -70,7 +70,7 @@ public class HomePatient extends AppCompatActivity {
         addPro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent code_patient = new Intent(HomePatient.this, QRCodePatient.class);
+                Intent code_patient = new Intent(HomePatient.this, QRCodePro.class);
                 startActivity(code_patient);
             }
         });

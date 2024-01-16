@@ -17,6 +17,12 @@
         android:theme="@style/Theme.SafeSpace"
         tools:targetApi="31">
         <activity
+            android:name=".CalendarViewHolder"
+            android:exported="false" />
+        <activity
+            android:name=".CalendrierWeekPatient"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />

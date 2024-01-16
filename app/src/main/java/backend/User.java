@@ -2,11 +2,13 @@ package backend;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public abstract class User {
-    private String connectionURL="jdbc:mysql://localhost:3306/test";
+    protected String connectionURL="jdbc:mysql://localhost:3306/safespace";
     protected String name;
     protected String surname;
     protected String mail;
@@ -15,11 +17,22 @@ public abstract class User {
     protected ArrayList<Appointement> appointements;
 
     public User(String UID){
-        try(Connection conn = DriverManager.getConnection(connectionURL,"root", "root")){
+        try{
+            Connection conn = DriverManager.getConnection(connectionURL,"root", "root");
+            Statement statement = conn.createStatement();
             String setUserRequest = "SELECT * FROM User WHERE UID="+UID;
+            ResultSet resultSet = statement.executeQuery(setUserRequest);
+            while (resultSet.next()){
+                System.out.println(resultSet.getInt(1)+" ");
+                name=resultSet.getString(3);
+                surname=resultSet.getString(4);
+                mail=resultSet.getString(1);
+                this.UID=resultSet.getString(0);
+            }
+            conn.close();
 
-        }catch(SQLException e){
-            System.out.println("connection didn't work");
+        }catch(Exception e){
+            System.out.println(e);
         }
 
 

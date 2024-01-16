@@ -1,6 +1,12 @@
+package backend;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public abstract class User {
+    private String connectionURL="jdbc:mysql://localhost:3306/test";
     protected String name;
     protected String surname;
     protected String mail;
@@ -8,6 +14,16 @@ public abstract class User {
     protected String UID;
     protected ArrayList<Appointement> appointements;
 
+    public User(String UID){
+        try(Connection conn = DriverManager.getConnection(connectionURL,"root", "root")){
+            String setUserRequest = "SELECT * FROM User WHERE UID="+UID;
+
+        }catch(SQLException e){
+            System.out.println("connection didn't work");
+        }
+
+
+    }
     public String getName() {
         return name;
     }

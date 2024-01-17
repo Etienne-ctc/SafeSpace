@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ListeRDVFocusPro extends AppCompatActivity {
+public class Notifications extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liste_rdvfocus_pro);
+        setContentView(R.layout.activity_notifications);
     }
 }

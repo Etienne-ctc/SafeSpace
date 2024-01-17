@@ -17,6 +17,9 @@
         android:theme="@style/Theme.SafeSpace"
         tools:targetApi="31">
         <activity
+            android:name=".FichePatientPro"
+            android:exported="false" />
+        <activity
             android:name=".CalendrierCreateEventsPro"
             android:exported="false" />
         <activity
@@ -42,7 +45,7 @@
             android:name=".HomePro"
             android:exported="false" />
         <activity
-            android:name=".ParametresNext"
+            android:name=".Notifications"
             android:exported="false" />
         <activity
             android:name=".Parametres"
@@ -60,7 +63,7 @@
             android:name=".ListeRDVFocusPro"
             android:exported="false" />
         <activity
-            android:name=".ListeRDVPro"
+            android:name=".ListePatientPro"
             android:exported="false" />
         <activity
             android:name=".QRCodePro"

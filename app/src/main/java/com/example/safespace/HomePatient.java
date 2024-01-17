@@ -80,7 +80,7 @@ public class HomePatient extends AppCompatActivity {
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cal_patient = new Intent(HomePatient.this, CalendrierPatient.class);
+                Intent cal_patient = new Intent(HomePatient.this, CalendrierPro.class);
                 startActivity(cal_patient);
             }
         });

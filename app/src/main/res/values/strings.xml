@@ -7,6 +7,19 @@
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
 
+    <string-array name="heure_array">
+        <item>8h</item>
+        <item>9h</item>
+        <item>10h</item>
+        <item>11h</item>
+        <item>12h</item>
+        <item>13h</item>
+        <item>14h</item>
+        <item>15h</item>
+        <item>16h</item>
+        <item>17h</item>
+    </string-array>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>

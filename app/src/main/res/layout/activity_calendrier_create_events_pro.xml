@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendrierCreateEventsPro">
+
+    <EditText
+        android:id="@+id/titreRDV_editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="103dp"
+        android:ems="10"
+        android:hint="Intitulé"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dateRDV_TextView"
+        android:layout_width="209dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="103dp"
+        android:ems="10"
+        android:hint="Date"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titreRDV_editTextText" />
+
+    <Button
+        android:id="@+id/validerRDV_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="159dp"
+        android:text="Valider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heureRDV_spinner" />
+
+    <Spinner
+        android:id="@+id/heureRDV_spinner"
+        android:layout_width="271dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateRDV_TextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

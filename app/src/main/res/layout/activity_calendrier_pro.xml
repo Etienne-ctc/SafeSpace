@@ -6,4 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".CalendrierPro">
 
+    <CalendarView
+        android:id="@+id/calendar_CalendarView"
+        android:layout_width="407dp"
+        android:layout_height="381dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="296dp"
+        android:minDate="01/01/2024"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_TextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ListView
+        android:id="@+id/events_ListView"
+        android:layout_width="409dp"
+        android:layout_height="308dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addEvents_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="266dp"
+        android:text="Ajouter un RDV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

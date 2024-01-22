@@ -3,7 +3,6 @@ package com.example.safespace;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CalendarView;
 import android.widget.ListView;
@@ -12,8 +11,6 @@ import android.widget.TextView;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
 
 public class CalendrierPatient extends AppCompatActivity {
     private TextView date;
@@ -26,7 +23,7 @@ public class CalendrierPatient extends AppCompatActivity {
         setContentView(R.layout.activity_calendrier_patient);
 
         date = findViewById(R.id.date_TextView);
-        events = findViewById(R.id.events_ListView);
+        events = findViewById(R.id.patients_ListView);
 
         cal = findViewById(R.id.calendar_CalendarView);
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {

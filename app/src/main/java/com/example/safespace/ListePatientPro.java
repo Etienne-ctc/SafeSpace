@@ -2,7 +2,10 @@ package com.example.safespace;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,6 +23,14 @@ public class ListePatientPro extends AppCompatActivity {
         p_liste = findViewById(R.id.liste_patients_textView);
 
         liste_patients = findViewById(R.id.patients_ListView);
+        liste_patients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent fiche_patients_intent = new Intent(ListePatientPro.this, FichePatientPro.class);
+                fiche_patients_intent.putExtra("nom_patient", String.valueOf(Patients.patientsList.get(position).getPatients()));
+                startActivity(fiche_patients_intent);
+            }
+        });
 
         /* For Test */
         createPatients("M. Pro", "M. Patient");
@@ -40,4 +51,5 @@ public class ListePatientPro extends AppCompatActivity {
         Patients patients = new Patients(pro, patient);
         Patients.patientsList.add(patients);
     }
+
 }

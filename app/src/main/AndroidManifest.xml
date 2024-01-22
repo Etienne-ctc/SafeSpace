@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SafeSpace"
         tools:targetApi="31">
+        <activity
+            android:name=".CreateExercicesPro"
+            android:exported="false" />
         <activity
             android:name=".FichePatientPro"
             android:exported="false" />

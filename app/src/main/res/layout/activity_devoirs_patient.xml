@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".DevoirsPatient">
 
+    <ListView
+        android:id="@+id/devoirs_ListView"
+        android:layout_width="408dp"
+        android:layout_height="663dp"
+        android:layout_marginTop="69dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/liste_devoirs_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste des devoirs"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

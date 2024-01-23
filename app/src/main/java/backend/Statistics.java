@@ -9,27 +9,8 @@ public class Statistics {
     public Statistics (String name){
         this.name=name;
         this.values=new ArrayList<StatisticsValues>();
+        //Fill the stat with it's value using database
+        //while is statsvalues in database -> new StatisticsValues(..)
     }
 
-    public void addValues(StatisticsValues val){
-        values.add(val);
-    }
-    public void removeValues(StatisticsValues val){
-        values.remove(val);
-    }
-    public ArrayList<StatisticsValues> getValues() {
-        return values;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setValues(ArrayList<StatisticsValues> values) {
-        this.values = values;
-    }
 }

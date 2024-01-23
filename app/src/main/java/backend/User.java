@@ -1,5 +1,7 @@
 package backend;
 
+import android.os.AsyncTask;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,17 +10,24 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public abstract class User {
-    protected String connectionURL="jdbc:mysql://localhost:3306/safespace";
+    protected String connectionURL="jdbc:mysql://192.168.1.131:3306/safespace";
     protected String name;
     protected String surname;
     protected String mail;
     protected Parameter parameter;
     protected String UID;
     protected ArrayList<Appointement> appointements;
+    public User(){
 
+    }
     public User(String UID){
+        //redo with call back function when it's working
+        System.out.println("trying connection");
+        System.out.println(connectionURL);
         try{
+            System.out.println("trying 2");
             Connection conn = DriverManager.getConnection(connectionURL,"root", "root");
+            System.out.println("trying 3");
             Statement statement = conn.createStatement();
             String setUserRequest = "SELECT * FROM User WHERE UID="+UID;
             ResultSet resultSet = statement.executeQuery(setUserRequest);
@@ -32,56 +41,7 @@ public abstract class User {
             conn.close();
 
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println(e.fillInStackTrace());
         }
-
-
-    }
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<Appointement> getAppointements() {
-        return appointements;
-    }
-
-    public Parameter getParameter() {
-        return parameter;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getUID() {
-        return UID;
-    }
-
-    public void setAppointements(ArrayList<Appointement> appointements) {
-        this.appointements = appointements;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public void setParameter(Parameter parameter) {
-        this.parameter = parameter;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public void setUID(String UID) {
-        this.UID = UID;
     }
 }

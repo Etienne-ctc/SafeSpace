@@ -32,23 +32,14 @@ public class Professionnal extends User{
         }
 
     }
-    private void setPatientProfessionnal(Patient patient){
-
+    public void createActivity(HomeWork hw){
+        /**
+         * Create the homework object
+         * then create it in the database
+         *
+         */
     }
-    public void addPatient(String codeQR) {
-        //to do
+    public void giveHomework(Patient p, HomeWork h){
+        p.addActivities(h);
     }
-    public void giveHomeWork(Patient patient, HomeWork homeWork){
-        //to do
-    }
-    public void removePatient(Patient patient){
-        //to do
-    }
-    public void addRdv(Date date, Patient patient ){
-        //to do
-    }
-    public void removeRdv(Date date,Patient patient ){
-        //to do
-    }
-    
 }

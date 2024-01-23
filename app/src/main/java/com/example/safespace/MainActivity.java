@@ -1,22 +1,13 @@
 package com.example.safespace;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import backend.DataBaseSelect;
 
 public class MainActivity extends AppCompatActivity {
     private EditText log;
@@ -29,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         log = findViewById(R.id.login_editTextText);
         password = findViewById(R.id.mdp_editText);
+        new DataBaseSelect().execute("SELECT * From user");
 
-        connection = findViewById(R.id.valider_button);
+
+
+        /*
         connection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(register_intent);
             }
         });
+
+         */
     }
 
 }

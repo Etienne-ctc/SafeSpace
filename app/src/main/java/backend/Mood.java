@@ -12,19 +12,5 @@ public class Mood  extends StatisticsValues{
         this.date = date;
         this.quality = quality;
     }
-    public void setActivity(String activity) {
-        this.activity = activity;
-    }
 
-    public String getActivity() {
-        return activity;
-    }
-
-    public String getContext() {
-        return context;
-    }
-
-    public void setContext(String context) {
-        this.context = context;
-    }
 }

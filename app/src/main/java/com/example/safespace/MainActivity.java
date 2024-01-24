@@ -7,7 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import backend.DataBaseSelect;
+
+import backend.*;
+
 
 public class MainActivity extends AppCompatActivity {
     private EditText log;
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         log = findViewById(R.id.login_editTextText);
         password = findViewById(R.id.mdp_editText);
-        new DataBaseSelect().execute("SELECT * From user");
+        User u = new Professionnal("4",true);
+
+
 
 
 

@@ -1,6 +1,7 @@
 package backend;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,39 +10,42 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public abstract class User {
-    protected String connectionURL="jdbc:mysql://192.168.1.131:3306/safespace";
+public class User{
     protected String name;
     protected String surname;
     protected String mail;
     protected Parameter parameter;
     protected String UID;
     protected ArrayList<Appointement> appointements;
-    public User(){
 
-    }
     public User(String UID){
         //redo with call back function when it's working
         System.out.println("trying connection");
-        System.out.println(connectionURL);
         try{
-            System.out.println("trying 2");
-            Connection conn = DriverManager.getConnection(connectionURL,"root", "root");
-            System.out.println("trying 3");
-            Statement statement = conn.createStatement();
-            String setUserRequest = "SELECT * FROM User WHERE UID="+UID;
-            ResultSet resultSet = statement.executeQuery(setUserRequest);
-            while (resultSet.next()){
-                System.out.println(resultSet.getInt(1)+" ");
-                name=resultSet.getString(3);
-                surname=resultSet.getString(4);
-                mail=resultSet.getString(1);
-                this.UID=resultSet.getString(0);
+            ResultSet result = new DataBaseSelect().execute("SELECT * From user WHERE idUser="+UID).get();
+            if (result != null && result.next()) {
+                this.UID=result.getString(1);
+                this.surname=result.getString(5);
+                this.mail=result.getString(2);
+                this.name=result.getString(4);
+                this.toString();
             }
-            conn.close();
 
         }catch(Exception e){
             System.out.println(e.fillInStackTrace());
         }
+    }
+
+    public void updateInfo(){
+        //this link the values of the user to the database in case it was changed
+    }
+
+
+
+
+    public String toString(){
+        String str = "This are the info "+UID+" name "+name+" surname "+ surname +" mail "+mail;
+        Log.d("User", str);
+        return str;
     }
 }

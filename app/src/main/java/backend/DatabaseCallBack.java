@@ -1,5 +1,7 @@
 package backend;
 
+import java.sql.ResultSet;
+
 public interface DatabaseCallBack {
-    void onQueryResult(String result);
+    void onQueryResult(ResultSet result);
 }

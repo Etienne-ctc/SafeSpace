@@ -24,9 +24,9 @@ public class Patient extends User{
         activities=new ArrayList<Activities>();
         statistics=new ArrayList<Statistics>();
         try {
-            ResultSet result = new DataBaseSelect().execute("SELECT * FROM patients WHERE idPatient=" + UID).get();
+            ResultSet result = new DataBaseSelect().execute("SELECT * FROM user WHERE id=" + UID).get();
             if (result != null && result.next()) {
-                this.professionnal= new Professionnal(result.getString(2),false);
+                this.professionnal= new Professionnal(result.getString(7),false);
             }
         }catch (Exception e){
             Log.e("patient","Exception init", e.fillInStackTrace());
@@ -65,6 +65,7 @@ public class Patient extends User{
     }
     public String toString(){
         super.toString();
+        Log.d("patient","This is a patient");
         return "";
     }
 

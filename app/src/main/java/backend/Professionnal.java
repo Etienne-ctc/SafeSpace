@@ -20,13 +20,12 @@ public class Professionnal extends User{
             this.patients=new ArrayList<Patient>();
             this.myHomeWorks=new ArrayList<HomeWork>();
             try {
-                ResultSet result = new DataBaseSelect().execute("SELECT idPatient FROM patients WHERE idPro=" + UID).get();
+                ResultSet result = new DataBaseSelect().execute("SELECT id FROM user WHERE pro_id=" + UID).get();
                 if (result != null){
                     while(result.next()){
                         patients.add(new Patient(result.getString(1)));
                     }
                 }
-                this.toString();
             }catch (Exception e){
                 Log.e("pro","Exception init", e.fillInStackTrace());
 
@@ -48,6 +47,7 @@ public class Professionnal extends User{
 
     public String toString(){
         super.toString();
+        Log.d("pro","This is a pro");
         for(Patient p : patients){
             p.toString();
         }

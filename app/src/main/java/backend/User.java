@@ -22,13 +22,12 @@ public class User{
         //redo with call back function when it's working
         System.out.println("trying connection");
         try{
-            ResultSet result = new DataBaseSelect().execute("SELECT * From user WHERE idUser="+UID).get();
+            ResultSet result = new DataBaseSelect().execute("SELECT * From user WHERE id="+UID).get();
             if (result != null && result.next()) {
                 this.UID=result.getString(1);
-                this.surname=result.getString(5);
-                this.mail=result.getString(2);
-                this.name=result.getString(4);
-                this.toString();
+                this.surname=result.getString(2);
+                this.mail=result.getString(4);
+                this.name=result.getString(3);
             }
 
         }catch(Exception e){

@@ -8,10 +8,6 @@ import java.sql.*;
 
 public class DataBaseSelect extends AsyncTask<String, Void, ResultSet> {
     private String connectionURL="jdbc:mysql://192.168.1.131:3306/safespace?connectTimeout=5000";
-    private DatabaseCallBack callback;
-    public DataBaseSelect(DatabaseCallBack callback) {
-        this.callback = callback;
-    }
     public DataBaseSelect(){}
     @Override
     protected ResultSet doInBackground(String... queries) {
@@ -27,10 +23,5 @@ public class DataBaseSelect extends AsyncTask<String, Void, ResultSet> {
         }
         return null;
     }
-    @Override
-    protected void onPostExecute(ResultSet result) {
-        if (callback != null) {
-            callback.onQueryResult(result);
-        }
-    }
+
 }

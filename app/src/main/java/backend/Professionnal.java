@@ -14,6 +14,7 @@ public class Professionnal extends User{
     private ArrayList<Patient> patients;
     private ArrayList<HomeWork> myHomeWorks;
 
+
     public Professionnal(String UID,boolean set){
         super(UID);
         if(set){

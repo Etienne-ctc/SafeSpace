@@ -17,6 +17,17 @@ public class User{
     protected Parameter parameter;
     protected String UID;
     protected ArrayList<Appointement> appointements;
+    /*
+    Type 0 = patient
+    Type 1 = pro
+    Type 2 = normal user
+     */
+    public User(String name,String surname,String mail,String mdp,boolean pro){
+        this.name=name;
+        this.surname=surname;
+        this.mail=mail;
+        addUser(mdp,pro);
+    }
 
     public User(String UID){
         //redo with call back function when it's working
@@ -39,6 +50,19 @@ public class User{
         //this link the values of the user to the database in case it was changed
     }
 
+    public void addUser(String mdp,boolean pro){
+        int type=0;
+        if(pro){
+            type =1;
+        }
+        String query = "INSERT INTO user (nom,prenom,mail,mdp,typ) VALUES ('"+this.name+"','"+this.surname+"','"+this.mail+"','"+mdp+"','"+type+"')";
+        Log.d("user", query);
+        try{
+            new DataBaseInsert().execute(query);
+        }catch (Exception e){
+            Log.d("user","adding a person in database"+e.fillInStackTrace());
+        }
+    }
 
 
 

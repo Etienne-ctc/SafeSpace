@@ -6,4 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".SommeilPatient">
 
+    <ImageView
+        android:id="@+id/S4_imageView"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="47dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/S3_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/heure_sommeil_seekBar"
+        app:srcCompat="@drawable/s4" />
+
+    <TextView
+        android:id="@+id/sommeil_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="159dp"
+        android:text="Sommeil"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temps_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="154dp"
+        android:text="Combien de temps avez-vous dormis ?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sommeil_textView" />
+
+    <TextView
+        android:id="@+id/qualite_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="154dp"
+        android:text="Quelle était la qualité de votre sommeil ?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heure_sommeil_seekBar" />
+
+    <SeekBar
+        android:id="@+id/qualite_sommeil_seekBar"
+        android:layout_width="325dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/S4_imageView"
+        tools:scrollbarSize="10sp" />
+
+    <SeekBar
+        android:id="@+id/heure_sommeil_seekBar"
+        android:layout_width="325dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temps_textView"
+        tools:scrollbarSize="10sp" />
+
+    <ImageView
+        android:id="@+id/S0_imageView"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/S1_imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
+        app:srcCompat="@drawable/s0" />
+
+    <ImageView
+        android:id="@+id/S1_imageView"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintStart_toEndOf="@+id/S0_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
+        app:srcCompat="@drawable/s1" />
+
+    <ImageView
+        android:id="@+id/S2_imageView"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintStart_toEndOf="@+id/S1_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
+        app:srcCompat="@drawable/s2" />
+
+    <ImageView
+        android:id="@+id/S3_imageView"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintStart_toEndOf="@+id/S2_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
+        app:srcCompat="@drawable/s3" />
+
+    <EditText
+        android:id="@+id/commentaire_sommeil_editTextText"
+        android:layout_width="351dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="Commentaire :"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <Button
+        android:id="@+id/valider_sommeil_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="17dp"
+        android:text="Valider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText"
+        app:layout_constraintVertical_bias="0.222" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

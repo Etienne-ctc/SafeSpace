@@ -2,10 +2,13 @@ package com.example.safespace;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import backend.*;
@@ -24,13 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         log = findViewById(R.id.login_editTextText);
         password = findViewById(R.id.mdp_editText);
-        User u = new Professionnal("4",true);
+        /*User u = new Professionnal("4",true);*/
 
-
-
-
-
-        /*
+        connection = findViewById(R.id.valider_button);
         connection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-         */
     }
 
 }

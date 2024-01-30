@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
+    android:background="#CCE0F8"
     tools:context=".MainActivity">
 
     <EditText
@@ -28,9 +28,9 @@
         android:layout_width="157dp"
         android:layout_height="48dp"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="127dp"
-        android:text="Connection"
+        android:text="Connexion"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -43,11 +43,12 @@
         android:layout_height="38dp"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="111dp"
-        android:layout_marginBottom="178dp"
+        android:layout_marginBottom="36dp"
         android:text="Créer un compte"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -55,14 +56,26 @@
         android:layout_width="283dp"
         android:layout_height="44dp"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="205dp"
+        android:layout_marginTop="340dp"
         android:layout_marginEnd="62dp"
         android:ems="10"
         android:hint="Identifiant"
         android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="302dp"
+        android:layout_height="308dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_editTextText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_2545" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,587 @@
     android:background="#CCE0F8"
     tools:context=".HumeurPatient">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCE0F8"
+        tools:context=".HumeurFocusPatient"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCE0F8"
+        tools:context=".SommeilPatient"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="-94dp">
+
+        <CheckBox
+            android:id="@+id/checkBox23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="369dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="276dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="307dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="338dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="276dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="307dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="369dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="285dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="285dp"
+            tools:layout_editor_absoluteY="276dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="285dp"
+            tools:layout_editor_absoluteY="307dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="285dp"
+            tools:layout_editor_absoluteY="338dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="285dp"
+            tools:layout_editor_absoluteY="369dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="338dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="572dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="508dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="541dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="572dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="508dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="541dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="572dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="508dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="541dp" />
+
+        <TextView
+            android:id="@+id/temps_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="154dp"
+            android:text="Pourquoi ?"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+        <TextView
+            android:id="@+id/temps_textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="154dp"
+            android:text="Activités :"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText2" />
+
+        <TextView
+            android:id="@+id/humeur_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="158dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="159dp"
+            android:text="Humeur"
+            android:textColor="#A78ADC"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/qualite_sommeil_seekBar"
+            android:layout_width="327dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="46dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7"
+            tools:scrollbarSize="10sp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="67dp"
+            android:layout_height="82dp"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_6_removebg_preview" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="67dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_3_removebg_preview" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="67dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_4_removebg_preview" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="67dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_5_removebg_preview" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="67dp"
+            android:layout_height="82dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_2_removebg_preview" />
+
+        <EditText
+            android:id="@+id/commentaire_sommeil_editTextText"
+            android:layout_width="348dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="412dp"
+            android:layout_marginEnd="30dp"
+            android:ems="10"
+            android:hint="Commentaire :"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+        <EditText
+            android:id="@+id/commentaire_sommeil_editTextText2"
+            android:layout_width="355dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="30dp"
+            android:ems="10"
+            android:hint="Commentaire :"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+        <Button
+            android:id="@+id/valider_sommeil_button"
+            android:layout_width="99dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="166dp"
+            android:layout_marginBottom="17dp"
+            android:text="Valider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="243dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="276dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="243dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="276dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="243dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="276dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="572dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="508dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="572dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="508dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="572dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="508dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <TextView
+        android:id="@+id/humeur_textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="159dp"
+        android:text="Humeur"
+        android:textColor="#A78ADC"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/valider_sommeil_button2"
+        android:layout_width="99dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="17dp"
+        android:text="Valider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

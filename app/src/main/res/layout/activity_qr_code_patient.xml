@@ -8,15 +8,15 @@
     android:orientation="vertical"
     tools:context=".QRCodePatient">
 
-    <EditText
-        android:id="@+id/qrCode_editText"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="93dp" />
+        android:layout_height="69dp"
+        android:text="QR_code" />
 
     <androidx.camera.view.PreviewView
         android:id="@+id/cameraPreview"
         android:layout_width="match_parent"
-        android:layout_height="636dp"
+        android:layout_height="659dp"
         android:baselineAligned="false" />
-
 </LinearLayout>

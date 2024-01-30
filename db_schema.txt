@@ -1,0 +1,6 @@
+user(id,nom,prenom,mail,mdp,typ,#pro_id)
+comm(id,#user_id)
+acti(id,#user_id,nom,etat)
+stat(id,#user_id,typ,valeur,date)
+exercice(id,#patient_id,nom,#pro_id,etat)
+rdv(id,#pro_id,#patient_id,daterdv)

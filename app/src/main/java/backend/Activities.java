@@ -1,8 +1,17 @@
 package backend;
 
-public abstract class Activities {
+public class Activities {
     protected String name;
-    protected int completion;
-    protected String content;
+    protected boolean completion;
+    public Activities(String name, boolean completion){
+        this.name=name;
+        this.completion=completion;
+    }
 
+    public String getName() {
+        return name;
+    }
+    public String toString(){
+        return "name: "+name+" completion :"+completion;
+    }
 }

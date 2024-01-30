@@ -13,8 +13,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import backend.User;
 
 public class Register extends AppCompatActivity {
+    private EditText prenom;
+    private EditText nom;
     private EditText log;
     private EditText mdp;
     private EditText mdp_check;
@@ -27,6 +30,8 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        prenom = findViewById(R.id.prenom_editTextText);
+        nom = findViewById(R.id.nom_editTextText);
 
         log = findViewById(R.id.login_editTextText);
         mdp = findViewById(R.id.mdp_editText);
@@ -40,11 +45,16 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mdp.equals(mdp_check)){
+                    //User user;
                     if(mode.equals(Boolean.FALSE)) {
                         // Send to database for patient
+                        /*user = new User(String.valueOf(nom.getText()), String.valueOf(prenom.getText()),
+                                String.valueOf(log.getText()), String.valueOf(mdp.getText()), false);*/
                     }
                     else if(mode.equals(Boolean.TRUE)){
                         // Send to database for pro
+                        /*user = new User(String.valueOf(nom.getText()), String.valueOf(prenom.getText()),
+                                String.valueOf(log.getText()), String.valueOf(mdp.getText()), true);*/
                     }
                 }
                 else {
@@ -87,6 +97,7 @@ public class Register extends AppCompatActivity {
             String imgPath = cursor.getString(colIndex);
             cursor.close();
             Bitmap image = BitmapFactory.decodeFile(imgPath);
+            // Send to BDD
         }
         else {
             Toast.makeText(this, "Aucune image selectionnée", Toast.LENGTH_LONG).show();

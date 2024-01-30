@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Check base de données
+
+
                 // Retour patient ou pro
                 Toast.makeText(MainActivity.this, "BDD not check", Toast.LENGTH_LONG).show();
                 Intent home_intent = new Intent(MainActivity.this, HomePatient.class);

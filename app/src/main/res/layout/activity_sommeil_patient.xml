@@ -8,7 +8,7 @@
     tools:context=".SommeilPatient">
 
     <TextView
-        android:id="@+id/sommeil_textView"
+        android:id="@+id/humeur_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
@@ -32,7 +32,7 @@
         android:text="Combien de temps avez-vous dormis ?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sommeil_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/humeur_textView" />
 
     <TextView
         android:id="@+id/qualite_textView"

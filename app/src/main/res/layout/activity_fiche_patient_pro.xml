@@ -15,10 +15,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="137dp"
         android:text="Fiche patient"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textColor="#A78ADC"
+        tools:textStyle="bold" />
 
     <TextView
         android:id="@+id/nom_patient_textView"
@@ -106,8 +108,10 @@
         android:layout_marginStart="58dp"
         android:layout_marginTop="93dp"
         android:layout_marginEnd="113dp"
+        android:layout_marginBottom="56dp"
         android:text="Routine"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_exo_textView"
         app:layout_constraintEnd_toStartOf="@+id/routine_imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sommeil_patient_textView" />
@@ -116,12 +120,12 @@
         android:id="@+id/humeur_imageView"
         android:layout_width="111dp"
         android:layout_height="104dp"
-        android:layout_marginTop="71dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toTopOf="@+id/sommeil_imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_rdv_textView"
+        app:layout_constraintTop_toBottomOf="@+id/analyse_textView"
+        app:layout_constraintVertical_bias="0.857"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView

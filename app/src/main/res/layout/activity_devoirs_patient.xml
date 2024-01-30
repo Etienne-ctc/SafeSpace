@@ -11,20 +11,25 @@
         android:id="@+id/devoirs_ListView"
         android:layout_width="408dp"
         android:layout_height="663dp"
-        android:layout_marginTop="69dp"
-        android:background="#DECFFA"
+        android:layout_marginTop="77dp"
+        android:background="#80A78ADC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/liste_devoirs_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Liste des devoirs"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textColor="#7C4DFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="78dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

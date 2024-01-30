@@ -44,13 +44,15 @@
         android:layout_width="157dp"
         android:layout_height="48dp"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="128dp"
         android:text="Valider"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/switch_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mdp_check_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/mdp_check_editText"
+        app:layout_constraintVertical_bias="0.153" />
 
     <Button
         android:id="@+id/diplome_button"
@@ -58,12 +60,14 @@
         android:layout_height="50dp"
         android:layout_marginStart="117dp"
         android:layout_marginEnd="117dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="72dp"
         android:text="Ajouter diplome"
-        app:layout_constraintBottom_toTopOf="@+id/valider_button"
+        app:layout_constraintBottom_toTopOf="@+id/switch_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mdp_check_editText"
+        app:layout_constraintVertical_bias="0.611" />
 
     <EditText
         android:id="@+id/login_editTextText"

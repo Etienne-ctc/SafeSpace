@@ -16,13 +16,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="166dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="167dp"
-        android:text="Set the Date"
-        android:textColor="@android:color/background_dark"
+        android:text="Calendrier"
+        android:textColor="#A78ADC"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

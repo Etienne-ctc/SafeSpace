@@ -7,12 +7,27 @@
     android:background="#CCE0F8"
     tools:context=".CalendrierPro">
 
+    <TextView
+        android:id="@+id/date_TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="167dp"
+        android:text="Calendrier"
+        android:textColor="#A78ADC"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <CalendarView
         android:id="@+id/calendar_CalendarView"
         android:layout_width="407dp"
         android:layout_height="381dp"
         android:layout_marginTop="44dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginBottom="208dp"
         android:minDate="01/01/2024"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,19 +37,23 @@
 
     <ListView
         android:id="@+id/events_ListView"
-        android:layout_width="409dp"
-        android:layout_height="308dp"
+        android:layout_width="412dp"
+        android:layout_height="245dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/addEvents_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="266dp"
+        android:layout_width="105dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
         android:text="Ajouter un RDV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

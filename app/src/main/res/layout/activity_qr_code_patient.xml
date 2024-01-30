@@ -11,11 +11,12 @@
     <EditText
         android:id="@+id/qrCode_editText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="93dp" />
 
     <androidx.camera.view.PreviewView
         android:id="@+id/cameraPreview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="636dp"
+        android:baselineAligned="false" />
 
 </LinearLayout>

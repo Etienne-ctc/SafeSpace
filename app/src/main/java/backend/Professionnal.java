@@ -20,6 +20,8 @@ public class Professionnal extends User{
         if(set){
             this.patients=new ArrayList<Patient>();
             this.myHomeWorks=new ArrayList<HomeWork>();
+            this.appointements=new ArrayList<Appointement>();
+            //set patient list
             try {
                 ResultSet result = new DataBaseSelect().execute("SELECT id FROM user WHERE pro_id=" + UID).get();
                 if (result != null){
@@ -31,6 +33,7 @@ public class Professionnal extends User{
                 Log.e("pro","Exception init", e.fillInStackTrace());
 
             }
+            //Set homework
             try {
                 ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE pro_id=" + this.getUid()).get();
                 while (result != null && result.next()) {
@@ -38,12 +41,35 @@ public class Professionnal extends User{
 
                 }
             }catch(Exception e){
-                Log.e("patient","Exception init", e.fillInStackTrace());
+                Log.e("pro","Exception init", e.fillInStackTrace());
+            }
+            //set appointements
+            try {
+                ResultSet result = new DataBaseSelect().execute("SELECT patient_id, daterdv From rdv WHERE pro_id=" + this.getUid()).get();
+                while (result != null && result.next()) {
+                    try {
+                        appointements.add(new Appointement(patients.get(this.getPatientID(result.getString(1))), result.getDate(2), this, null));
+                    }catch(PatientDoesntExistException e){
+                    }
+
+                }
+            }catch(Exception e){
+                Log.e("pro","Exception init", e.fillInStackTrace());
             }
         }
 
 
     }
+
+    private int getPatientID(String string) throws PatientDoesntExistException {
+        for (int i = 0; i < patients.size(); i++) {
+            if(patients.get(i).UID==string){
+                return i;
+            }
+        }
+        throw new PatientDoesntExistException(string);
+    }
+
     public void createActivity(HomeWork hw){
         /**
          * Create the homework object
@@ -61,7 +87,9 @@ public class Professionnal extends User{
         for(Patient p : patients){
             p.toString();
         }
-
+        for(Appointement a : appointements){
+            Log.d("pro",a.toString());
+        }
         return "";
     }
 }

@@ -1,6 +1,6 @@
 package backend;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Appointement {
     private Patient patient;
@@ -14,10 +14,7 @@ public class Appointement {
         this.professionnal = professionnal;
         this.notes=notes;
     }
-    public Appointement(Patient patient, Date date, Professionnal professionnal){
-        this.date=date;
-        this.patient = patient;
-        this.professionnal = professionnal;
-        this.notes=null;
+    public String toString(){
+        return "RDV ::::date : "+ date + " patient :" + patient.name +" pro :" + professionnal.name + "notes "+ notes;
     }
 }

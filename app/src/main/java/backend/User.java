@@ -37,6 +37,7 @@ public class User{
         activities=new ArrayList<Activities>();
         statistics=new ArrayList<Statistics>();
         System.out.println("trying connection");
+        parameter=new Parameter(UID);
         try{
             ResultSet result = new DataBaseSelect().execute("SELECT * From user WHERE id="+UID).get();
             if (result != null && result.next()) {
@@ -64,6 +65,21 @@ public class User{
             statistics.add(new Statistics("sleep",UID));
         }catch (Exception e){
             Log.e("patient","Exception init stats", e.fillInStackTrace());
+        }
+        //set parameters
+        try{
+            ResultSet result = new DataBaseSelect().execute("SELECT * From param WHERE user_id="+UID).get();
+            if (result != null && result.next()) {
+                parameter.setRdv(result.getBoolean(2));
+                parameter.setAdd_patients(result.getBoolean(3));
+                parameter.setRecap(result.getBoolean(4));
+                parameter.setHumeur(result.getBoolean(5));
+                parameter.setSommeil(result.getBoolean(6));
+                parameter.setTodo(result.getBoolean(7));
+            }
+
+        }catch(Exception e){
+            Log.e("patient","Exception init user param", e.fillInStackTrace());
         }
     }
 
@@ -126,6 +142,7 @@ public class User{
         for (int j = 0; j < statistics.size(); j++) {
             Log.d("User",statistics.get(j).toString());
         }
+        Log.d("User",parameter.toString());
         return str;
     }
 

@@ -16,7 +16,6 @@ public class Statistics {
             if(name.equals("sleep")){
                 ResultSet result = new DataBaseSelect().execute("SELECT valeur, date,duration From "+name+" WHERE user_id=" + id).get();
                 while(result != null && result.next()) {
-                    Log.d("Statistics","this is sleep");
                     values.add(new Sleep(result.getInt(1),result.getDate(2),result.getInt(3)));
                 }
             }

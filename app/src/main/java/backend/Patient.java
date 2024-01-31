@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class Patient extends User{
 
     private Professionnal professionnal;
-    private String QRCode;
     protected ArrayList<Appointement> appointements;
     public Patient(String UID,Professionnal professionnal){
         super(UID);
@@ -20,7 +19,9 @@ public class Patient extends User{
     public Patient(String UID){
         super(UID);
         this.professionnal=null;
+        this.appointements=new ArrayList<Appointement>();
 
+        //Set user's pro
         try {
             ResultSet result = new DataBaseSelect().execute("SELECT * FROM user WHERE id=" + UID).get();
             if (result != null && result.next()) {
@@ -29,6 +30,7 @@ public class Patient extends User{
         }catch (Exception e){
             Log.e("patient","Exception init", e.fillInStackTrace());
         }
+        //set activities Homework
         try {
             ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE patient_id=" + this.getUid()).get();
             while (result != null && result.next()) {
@@ -38,18 +40,33 @@ public class Patient extends User{
         }catch(Exception e){
             Log.e("patient","Exception init", e.fillInStackTrace());
         }
+        //set appointements
+        try {
+            ResultSet result = new DataBaseSelect().execute("SELECT pro_id, daterdv From rdv WHERE patient_id=" + this.getUid()).get();
+            while (result != null && result.next()) {
+                    appointements.add(new Appointement(this, result.getDate(2), this.professionnal, null));
+            }
+        }catch(Exception e){
+            Log.e("pro","Exception init", e.fillInStackTrace());
+        }
     }
 
 
     public String toString(){
         super.toString();
         Log.d("patient","This is a patient");
-
+        for(Appointement a : appointements){
+            Log.d("patient",a.toString());
+        }
 
         return "";
     }
-
-
+    public ArrayList<Statistics> getStatistics(){
+        return statistics;
+    }
+    public ArrayList<Activities> getActivity(){
+        return activities;
+    }
     public Professionnal getProfessionnal() {
         return professionnal;
     }

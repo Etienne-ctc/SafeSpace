@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CCE0F8"
     android:orientation="vertical"
     tools:context=".QRCodePatient">
-    
+
     <EditText
+        android:id="@+id/texte_editText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/qrCode_editText"/>
+        android:layout_height="69dp"
+        android:text="QR_code" />
 
     <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cameraPreview"/>
-
+        android:layout_height="659dp"
+        android:baselineAligned="false" />
 </LinearLayout>

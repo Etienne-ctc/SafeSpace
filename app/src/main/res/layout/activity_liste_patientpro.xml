@@ -4,25 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CCE0F8"
     tools:context=".ListePatientPro">
 
     <ListView
         android:id="@+id/patients_ListView"
-        android:layout_width="408dp"
-        android:layout_height="663dp"
-        android:layout_marginTop="69dp"
+        android:layout_width="404dp"
+        android:layout_height="616dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/liste_patients_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="Liste des patients"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textSize="34sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="72dp"
+        tools:textColor="#A78ADC"
+        tools:textStyle="bold" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

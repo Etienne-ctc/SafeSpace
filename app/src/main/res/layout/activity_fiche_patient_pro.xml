@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CCE0F8"
     tools:context=".FichePatientPro">
 
     <TextView
@@ -11,24 +12,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="137dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="137dp"
         android:text="Fiche patient"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textColor="#A78ADC"
+        tools:textStyle="bold" />
 
     <TextView
         android:id="@+id/nom_patient_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="123dp"
         android:hint="Nom du patient"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fiche_patient_textView" />
 
@@ -115,12 +119,12 @@
         android:id="@+id/humeur_imageView"
         android:layout_width="111dp"
         android:layout_height="104dp"
-        android:layout_marginTop="71dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toTopOf="@+id/sommeil_imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_rdv_textView"
+        app:layout_constraintTop_toBottomOf="@+id/analyse_textView"
+        app:layout_constraintVertical_bias="0.857"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
@@ -138,22 +142,23 @@
         android:layout_width="111dp"
         android:layout_height="104dp"
         android:layout_marginEnd="61dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/add_exo_textView"
         app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="552dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/add_exo_textView"
+    <Button
+        android:id="@+id/add_exo_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginBottom="16dp"
-        android:text="Ajouter un exercice +"
-        android:textSize="20sp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="7dp"
+        android:text="Ajouter un exercice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/routine_patient_textView"
+        app:layout_constraintVertical_bias="0.785" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,7 +32,7 @@ public class SommeilPatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sommeil_patient);
 
-        sommeil = findViewById(R.id.sommeil_textView);
+        sommeil = findViewById(R.id.humeur_textView);
         duree = findViewById(R.id.temps_textView);
         qualite = findViewById(R.id.qualite_textView);
 

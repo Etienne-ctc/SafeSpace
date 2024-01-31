@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText log;
     private EditText password;
     private Button connection;
-    private TextView register;
+    private Button register;
 
 
     @Override
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        register = findViewById(R.id.register_textView);
+        register = findViewById(R.id.register_button);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

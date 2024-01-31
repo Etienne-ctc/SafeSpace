@@ -4,25 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CCE0F8"
     tools:context=".DevoirsPatient">
 
     <ListView
         android:id="@+id/devoirs_ListView"
-        android:layout_width="408dp"
-        android:layout_height="663dp"
-        android:layout_marginTop="69dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="411dp"
+        android:layout_height="606dp"
+        android:layout_marginTop="37dp"
+        android:background="#80A78ADC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/liste_devoirs_textView" />
 
     <TextView
         android:id="@+id/liste_devoirs_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="76dp"
         android:text="Liste des devoirs"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textColor="#7C4DFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

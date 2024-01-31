@@ -41,7 +41,7 @@ public class QRCodePatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_patient);
 
-        test = findViewById(R.id.qrCode_editText);
+        test = findViewById(R.id.texte_editText);
         previewView = findViewById(R.id.cameraPreview);
 
         // Gestion des permissions pour utiliser la camera

@@ -266,11 +266,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/S2_imageView"
             tools:scrollbarSize="10sp" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/S4_imageView"
             android:layout_width="67dp"
             android:layout_height="82dp"
             android:layout_marginEnd="7dp"
@@ -279,43 +279,43 @@
             app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_6_removebg_preview" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/S1_imageView"
             android:layout_width="67dp"
             android:layout_height="82dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView7"
-            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintEnd_toStartOf="@+id/S2_imageView"
+            app:layout_constraintStart_toEndOf="@+id/S0_imageView"
             app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
             app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_3_removebg_preview" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/S2_imageView"
             android:layout_width="67dp"
             android:layout_height="82dp"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="6dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView6"
-            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintEnd_toStartOf="@+id/S3_imageView"
+            app:layout_constraintStart_toEndOf="@+id/S1_imageView"
             app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
             app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_4_removebg_preview" />
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/S3_imageView"
             android:layout_width="67dp"
             android:layout_height="82dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="13dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintEnd_toStartOf="@+id/S4_imageView"
             app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
             app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_5_removebg_preview" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/S0_imageView"
             android:layout_width="67dp"
             android:layout_height="82dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintEnd_toStartOf="@+id/S1_imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
             app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_2_removebg_preview" />

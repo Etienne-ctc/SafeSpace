@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/S2_imageView"
         tools:scrollbarSize="10sp" />
 
     <EditText
@@ -91,52 +91,61 @@
         app:layout_constraintVertical_bias="0.434" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/S4_imageView"
         android:layout_width="67dp"
         android:layout_height="82dp"
+        android:layout_marginStart="9dp"
         android:layout_marginTop="13dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/S3_imageView"
         app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
-        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_6_removebg_preview"
-        tools:layout_editor_absoluteX="328dp" />
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_6_removebg_preview" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/S3_imageView"
         android:layout_width="67dp"
         android:layout_height="82dp"
+        android:layout_marginStart="13dp"
         android:layout_marginTop="13dp"
+        app:layout_constraintStart_toEndOf="@+id/S2_imageView"
         app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
-        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_5_removebg_preview"
-        tools:layout_editor_absoluteX="252dp" />
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_5_removebg_preview" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/S2_imageView"
         android:layout_width="67dp"
         android:layout_height="82dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="13dp"
+        app:layout_constraintStart_toEndOf="@+id/S1_imageView"
         app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
-        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_4_removebg_preview"
-        tools:layout_editor_absoluteX="172dp" />
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_4_removebg_preview" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/S1_imageView"
         android:layout_width="67dp"
         android:layout_height="82dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="13dp"
+        app:layout_constraintStart_toEndOf="@+id/S0_imageView"
         app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
-        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_3_removebg_preview"
-        tools:layout_editor_absoluteX="91dp" />
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_3_removebg_preview" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/S0_imageView"
         android:layout_width="67dp"
         android:layout_height="82dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="13dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/S1_imageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/qualite_textView"
-        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_2_removebg_preview"
-        tools:layout_editor_absoluteX="16dp" />
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_2_removebg_preview" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
+        android:id="@+id/heure_sommeil_seekBar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="334dp"
         android:layout_height="30dp"
@@ -154,7 +163,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="0h"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+        app:layout_constraintBottom_toTopOf="@+id/heure_sommeil_seekBar"
         tools:layout_editor_absoluteX="26dp" />
 
     <TextView
@@ -163,7 +172,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="24h"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+        app:layout_constraintBottom_toTopOf="@+id/heure_sommeil_seekBar"
         tools:layout_editor_absoluteX="349dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,7 +67,7 @@ public class User{
 
 
     public String toString(){
-        String str = "This are the info "+UID+" name "+name+" surname "+ surname +" mail "+mail;
+        String str = "This are the info " + UID + " name " + name + " surname " + surname + " mail " + mail;
         Log.d("User", str);
         return str;
     }

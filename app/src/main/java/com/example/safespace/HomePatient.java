@@ -21,7 +21,7 @@ public class HomePatient extends AppCompatActivity {
     private Button devoirs;
     private Button humeur;
     private Button sommeil;
-    private TextView addPro;
+    private Button addPro;
     private Button cal;
 
     @Override
@@ -77,7 +77,7 @@ public class HomePatient extends AppCompatActivity {
             }
         });
 
-        addPro = findViewById(R.id.addPro_textView);
+        addPro = findViewById(R.id.add_pro_button);
         addPro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,6 +1,6 @@
 package backend;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Mood  extends StatisticsValues{
     private String context;
@@ -12,5 +12,7 @@ public class Mood  extends StatisticsValues{
         this.date = date;
         this.quality = quality;
     }
-
+    public String toString(){
+        return "Mood activity : " + activity + "context "+ context+ " quality" + quality +" date "+date;
+    }
 }

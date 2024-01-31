@@ -31,7 +31,7 @@ public class Patient extends User{
         }
         try {
             ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE patient_id=" + this.getUid()).get();
-            if (result != null && result.next()) {
+            while (result != null && result.next()) {
                 activities.add(new HomeWork(result.getString(1),result.getBoolean(2),professionnal));
 
             }

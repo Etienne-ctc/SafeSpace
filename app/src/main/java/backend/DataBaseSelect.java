@@ -12,9 +12,7 @@ public class DataBaseSelect extends AsyncTask<String, Void, ResultSet> {
     @Override
     protected ResultSet doInBackground(String... queries) {
         try {
-            Log.d("DatabaseSelect", "Connecting to the database");
             Connection conn = DriverManager.getConnection(connectionURL, "read", "123");
-            Log.d("DatabaseSelect", "Connected to the database");
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(queries[0]); // Assuming only one query for simplicity
             return resultSet;

@@ -32,8 +32,8 @@ public class Professionnal extends User{
 
             }
             try {
-                ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE patient_id=" + this.getUid()).get();
-                if (result != null && result.next()) {
+                ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE pro_id=" + this.getUid()).get();
+                while (result != null && result.next()) {
                     myHomeWorks.add(new HomeWork(result.getString(1),result.getBoolean(2),this));
 
                 }

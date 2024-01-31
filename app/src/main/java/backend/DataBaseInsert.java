@@ -15,9 +15,7 @@ public class DataBaseInsert extends AsyncTask<String, Void, Boolean> {
     @Override
     protected Boolean doInBackground(String... queries) {
         try {
-            Log.d("DatabaseInsert", "Connecting to the database");
             Connection conn = DriverManager.getConnection(connectionURL, "read", "123");
-            Log.d("DatabaseInsert", "Connected to the database");
             String insertQuery = queries[0];
             PreparedStatement preparedStatement = conn.prepareStatement(insertQuery);
             int affectedRows = preparedStatement.executeUpdate();

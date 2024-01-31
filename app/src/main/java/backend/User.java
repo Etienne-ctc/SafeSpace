@@ -47,19 +47,24 @@ public class User{
             }
 
         }catch(Exception e){
-            System.out.println(e.fillInStackTrace());
+            Log.e("patient","Exception init user info", e.fillInStackTrace());
         }
 
         try {
             ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From acti WHERE user_id=" + this.getUid()).get();
-            if (result != null && result.next()) {
+            while (result != null && result.next()) {
                 activities.add(new Activities(result.getString(1),result.getBoolean(2)));
 
             }
         }catch(Exception e){
-            Log.e("patient","Exception init", e.fillInStackTrace());
+            Log.e("patient","Exception init acti", e.fillInStackTrace());
         }
-        //Add setting stats
+        try{
+            statistics.add(new Statistics("mood",UID));
+            statistics.add(new Statistics("sleep",UID));
+        }catch (Exception e){
+            Log.e("patient","Exception init stats", e.fillInStackTrace());
+        }
     }
 
 
@@ -116,6 +121,10 @@ public class User{
         Log.d("User", str);
         for (int i = 0; i < activities.size(); i++) {
             Log.d("User",activities.get(i).toString());
+        }
+
+        for (int j = 0; j < statistics.size(); j++) {
+            Log.d("User",statistics.get(j).toString());
         }
         return str;
     }

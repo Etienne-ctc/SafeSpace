@@ -1,6 +1,6 @@
 package backend;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Sleep extends StatisticsValues{
     private int duration;
@@ -10,5 +10,7 @@ public class Sleep extends StatisticsValues{
         this.date=date;
         this.quality=quality;
     }
-
+    public String toString(){
+        return "Sleep duration" + duration + " quality" + quality +" date "+date;
+    }
 }

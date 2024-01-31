@@ -71,4 +71,52 @@ public class User{
         Log.d("User", str);
         return str;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public Parameter getParameter() {
+        return parameter;
+    }
+
+    public void setParameter(Parameter parameter) {
+        this.parameter = parameter;
+    }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }
+
+    public ArrayList<Appointement> getAppointements() {
+        return appointements;
+    }
+
+    public void setAppointements(ArrayList<Appointement> appointements) {
+        this.appointements = appointements;
+    }
 }

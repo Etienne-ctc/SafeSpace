@@ -13,7 +13,7 @@ public class Professionnal extends User{
 
     private ArrayList<Patient> patients;
     private ArrayList<HomeWork> myHomeWorks;
-
+    protected ArrayList<Appointement> appointements;
 
     public Professionnal(String UID,boolean set){
         super(UID);
@@ -30,6 +30,15 @@ public class Professionnal extends User{
             }catch (Exception e){
                 Log.e("pro","Exception init", e.fillInStackTrace());
 
+            }
+            try {
+                ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE patient_id=" + this.getUid()).get();
+                if (result != null && result.next()) {
+                    myHomeWorks.add(new HomeWork(result.getString(1),result.getBoolean(2),this));
+
+                }
+            }catch(Exception e){
+                Log.e("patient","Exception init", e.fillInStackTrace());
             }
         }
 

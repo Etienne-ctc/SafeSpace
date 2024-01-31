@@ -8,8 +8,8 @@
     android:orientation="vertical"
     tools:context=".QRCodePatient">
 
-    <TextView
-        android:id="@+id/textView3"
+    <EditText
+        android:id="@+id/texte_editText"
         android:layout_width="match_parent"
         android:layout_height="69dp"
         android:text="QR_code" />

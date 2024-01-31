@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +21,7 @@ public class FichePatientPro extends AppCompatActivity {
     private ImageView humeur_graphe;
     private ImageView sommeil_graphe;
     private ImageView routine_graphe;
-    private TextView add_exos;
+    private Button add_exos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class FichePatientPro extends AppCompatActivity {
         sommeil_graphe = findViewById(R.id.sommeil_imageView);
         routine_graphe = findViewById(R.id.routine_imageView);
 
-        add_exos = findViewById(R.id.add_exo_textView);
+        add_exos = findViewById(R.id.add_exo_button);
         add_exos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

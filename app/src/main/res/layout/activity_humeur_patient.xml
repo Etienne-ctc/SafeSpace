@@ -11,12 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#CCE0F8"
-        tools:context=".HumeurFocusPatient"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#CCE0F8"
         tools:context=".SommeilPatient"
         tools:layout_editor_absoluteX="195dp"
         tools:layout_editor_absoluteY="-94dp">
@@ -590,4 +584,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText"
         app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.safespace;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -20,10 +21,10 @@ import java.util.concurrent.ExecutionException;
 
 public class QRCodePro extends AppCompatActivity {
     private ImageView qrCodeIV;
-    private EditText dataEdt;
-    private Button generateQrBtn;
+    private Button back;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
+    String CODE_TEXT = "M. Truc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,41 +32,37 @@ public class QRCodePro extends AppCompatActivity {
         setContentView(R.layout.activity_qr_code_pro);
 
         qrCodeIV = findViewById(R.id.idIVQrcode_ImageView);
-        dataEdt = findViewById(R.id.intext_EditText);
-        generateQrBtn = findViewById(R.id.genQR_button);
+        initQRCode(CODE_TEXT);
 
-        // initializing onclick listener for button.
-        generateQrBtn.setOnClickListener(new View.OnClickListener() {
+        back = findViewById(R.id.back_button);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(dataEdt.getText().toString())) {
-
-                    // if the edittext inputs are empty then execute
-                    // this method showing a toast message.
-                    Toast.makeText(QRCodePro.this, "Enter some text to generate QR Code", Toast.LENGTH_SHORT).show();
-                } else {
-                    // below line is for getting
-                    // the windowmanager service.
-                    WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
-                    Display display = manager.getDefaultDisplay();
-
-                    // creating a variable for point which
-                    // is to be displayed in QR Code.
-                    Point point = new Point();
-                    display.getSize(point);
-                    int width = point.x;
-                    int height = point.y;
-                    int dimen = Math.min(width, height);
-                    dimen = dimen * 3 / 4;
-
-                    // setting this dimensions inside our qr code
-                    // encoder to generate our qr code.
-                    qrgEncoder = new QRGEncoder(dataEdt.getText().toString(), null, QRGContents.Type.TEXT, dimen);
-                    //bitmap = qrgEncoder.encodeAsBitmap();
-                    bitmap = qrgEncoder.getBitmap();
-                    qrCodeIV.setImageBitmap(bitmap);
-                }
+                Intent back_intent = new Intent(QRCodePro.this, HomePro.class);
+                startActivity(back_intent);
             }
         });
+    }
+
+    private void initQRCode(String text){
+        WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        Display display = manager.getDefaultDisplay();
+
+        // creating a variable for point which
+        // is to be displayed in QR Code.
+        Point point = new Point();
+        display.getSize(point);
+        int width = point.x;
+        int height = point.y;
+        int dimen = Math.min(width, height);
+        dimen = dimen * 3 / 4;
+
+        // setting this dimensions inside our qr code
+        // encoder to generate our qr code.
+
+        qrgEncoder = new QRGEncoder(text, null, QRGContents.Type.TEXT, dimen);
+        //bitmap = qrgEncoder.encodeAsBitmap();
+        bitmap = qrgEncoder.getBitmap();
+        qrCodeIV.setImageBitmap(bitmap);
     }
 }

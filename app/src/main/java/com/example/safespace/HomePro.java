@@ -51,6 +51,7 @@ public class HomePro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent qrcode_intent = new Intent(HomePro.this, QRCodePro.class);
+                startActivity(qrcode_intent);
             }
         });
     }

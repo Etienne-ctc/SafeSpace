@@ -9,10 +9,12 @@
 
     <ListView
         android:id="@+id/devoirs_ListView"
-        android:layout_width="411dp"
-        android:layout_height="606dp"
-        android:layout_marginTop="37dp"
+        android:layout_width="398dp"
+        android:layout_height="531dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
         android:background="#80A78ADC"
+        app:layout_constraintBottom_toTopOf="@+id/valider_devoirs_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/liste_devoirs_textView" />
@@ -31,5 +33,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/valider_devoirs_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="166dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="7dp"
+        android:text="Valider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

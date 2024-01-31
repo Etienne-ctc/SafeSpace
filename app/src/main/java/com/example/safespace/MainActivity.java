@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         connection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Check base de données
+                // Check user in BDD
 
 
                 // Retour patient ou pro

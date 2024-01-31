@@ -37,6 +37,9 @@ public class HomePatient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent param_intent = new Intent(HomePatient.this, Parametres.class);
+                param_intent.putExtra("type", "patient");
+                // add extra with patient id
+                param_intent.putExtra("id_patient", 2);
                 startActivity(param_intent);
             }
         });

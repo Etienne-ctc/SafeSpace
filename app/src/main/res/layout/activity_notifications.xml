@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/rdv_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
@@ -36,70 +36,71 @@
         app:layout_constraintTop_toBottomOf="@+id/humeur_textView3" />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/humeur_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="172dp"
         android:text="Humeur"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/humeur_textView3" />
 
     <Switch
-        android:id="@+id/switch3"
+        android:id="@+id/add_patients_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="108dp"
         android:text="Ajout patients"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintTop_toBottomOf="@+id/rdv_switch" />
 
     <Switch
-        android:id="@+id/switch4"
+        android:id="@+id/sommeil_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="164dp"
         android:text="Sommeil"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch3" />
+        app:layout_constraintTop_toBottomOf="@+id/humeur_switch" />
 
     <Switch
-        android:id="@+id/switch5"
+        android:id="@+id/recap_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="108dp"
         android:text="Récapitulatifs"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch4" />
+        app:layout_constraintTop_toBottomOf="@+id/add_patients_switch" />
 
     <Switch
-        android:id="@+id/switch6"
+        android:id="@+id/to_do_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="200dp"
-        android:layout_marginBottom="280dp"
         android:text="ToDo"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch5" />
+        app:layout_constraintTop_toBottomOf="@+id/sommeil_switch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

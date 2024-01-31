@@ -23,6 +23,7 @@ public class HomePro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent param_intent = new Intent(HomePro.this, Parametres.class);
+                param_intent.putExtra("type", "pro");
                 startActivity(param_intent);
             }
         });
@@ -50,6 +51,7 @@ public class HomePro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent qrcode_intent = new Intent(HomePro.this, QRCodePro.class);
+                startActivity(qrcode_intent);
             }
         });
     }

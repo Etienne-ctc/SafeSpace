@@ -37,5 +37,18 @@ public class Statistics {
         }
         return "";
     }
+    public void addStatisticsValue(StatisticsValues s){
+        values.add(s);
+    }
 
+    public void removeStatisticsValue(StatisticsValues stats) {
+        values.remove(stats);
+    }
+
+    public String getName(){
+        return name;
+    }
+    public ArrayList<StatisticsValues> getValues(){
+        return values;
+    }
 }

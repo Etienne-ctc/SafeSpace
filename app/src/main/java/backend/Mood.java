@@ -12,7 +12,14 @@ public class Mood  extends StatisticsValues{
         this.date = date;
         this.quality = quality;
     }
+    public String getContext(){
+        return context;
+    }
+    public String getActivity(){
+        return activity;
+    }
     public String toString(){
         return "Mood activity : " + activity + "context "+ context+ " quality" + quality +" date "+date;
     }
+
 }

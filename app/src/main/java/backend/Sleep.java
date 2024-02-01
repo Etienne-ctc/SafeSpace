@@ -10,6 +10,9 @@ public class Sleep extends StatisticsValues{
         this.date=date;
         this.quality=quality;
     }
+    public int getDuration(){
+        return duration;
+    }
     public String toString(){
         return "Sleep duration" + duration + " quality" + quality +" date "+date;
     }

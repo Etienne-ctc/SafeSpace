@@ -14,7 +14,7 @@ public class User{
     protected String name;
     protected String surname;
     protected String mail;
-    protected Parameter parameter;
+    public Parameter parameter;
     protected String UID;
 
     protected ArrayList<Activities> activities;
@@ -103,10 +103,18 @@ public class User{
         }
     }
     public void addActivities(Activities act){
-        //add to database for completion 0
+        String query;
+        query= "INSERT INTO acti (user_id,nom,etat) VALUES ("+getUid()+",'"+act.name+"',false)";
+        Log.d("user", query);
+        try{
+            new DataBaseInsert().execute(query);
+        }catch (Exception e){
+            Log.d("user","adding an activity in database"+e.fillInStackTrace());
+        }
         activities.add(act);
     }
     public void updateActivities(Activities act){
+
         //to do
         /**
          * 1st add to data base
@@ -114,23 +122,67 @@ public class User{
          * change the value in the arraylist
          */
     }
-    public void addStatistics(String name, StatisticsValues stats){
-        //to do
-        /**
-         * get the values and add them to the data base
-         * then to the array list
-         */
+    public void addMood(Mood stats){
+
+        String query;
+        query= "INSERT INTO mood(user_id,valeur,date,context,activity) VALUES("
+                +getUid()+","
+                +stats.quality+",'"
+                +stats.date+"','"
+                +stats.getContext()+"','"
+                +stats.getActivity()+"')";
+        Log.d("user", query);
+        try{
+            new DataBaseInsert().execute(query);
+        }catch (Exception e){
+            Log.d("user","adding an mood in database"+e.fillInStackTrace());
+        }
+        statistics.get(0).addStatisticsValue(stats);
     }
 
-    public void removeStatistics(String name, StatisticsValues stats){
-        //to do
-        /**
-         * Get the value to be removed
-         * delete from the array
-         * then from the data base
-         */
+    public void addSleep(Sleep stats){
+
+        String query;
+        query= "INSERT INTO sleep(user_id,valeur,date,duration) VALUES("
+                +getUid()+","
+                +stats.quality+",'"
+                +stats.date+"',"
+                +stats.getDuration()+")";
+        Log.d("user", query);
+        try{
+            new DataBaseInsert().execute(query);
+        }catch (Exception e){
+            Log.d("user","adding an mood in database"+e.fillInStackTrace());
+        }
+        statistics.get(1).addStatisticsValue(stats);
     }
 
+    public void removeSleep(StatisticsValues stats){
+        //to do
+        String query;
+        query= "DELETE FROM sleep WHERE user_id="+getUid()+" AND date='"+stats.date+"'";
+        Log.d("user", query);
+        try{
+            new DataBaseDelete().execute(query);
+        }catch (Exception e){
+            Log.d("user","remove a sleep in database"+e.fillInStackTrace());
+        }
+        statistics.get(1).removeStatisticsValue(stats);
+
+    }
+    public void removeMood(StatisticsValues stats){
+        //to do
+        String query;
+        query= "DELETE FROM mood WHERE user_id="+getUid()+" AND date='"+stats.date+"'";
+        Log.d("user", query);
+        try{
+            new DataBaseDelete().execute(query);
+        }catch (Exception e){
+            Log.d("user","remove a mood in database"+e.fillInStackTrace());
+        }
+        statistics.get(0).removeStatisticsValue(stats);
+
+    }
 
     public String toString(){
         String str = "This are the info " + UID + " name " + name + " surname " + surname + " mail " + mail;
@@ -172,5 +224,11 @@ public class User{
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+    public ArrayList<Activities> getActivities(){
+        return activities;
+    }
+    public ArrayList<Statistics> getStatistics(){
+        return statistics;
     }
 }

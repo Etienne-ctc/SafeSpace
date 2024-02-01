@@ -16,196 +16,36 @@
         tools:layout_editor_absoluteY="-94dp">
 
         <CheckBox
-            android:id="@+id/checkBox23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="369dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="276dp" />
-
-        <CheckBox
             android:id="@+id/checkBox22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Anxieux.se"
             tools:layout_editor_absoluteX="33dp"
             tools:layout_editor_absoluteY="307dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="338dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="276dp" />
 
         <CheckBox
             android:id="@+id/checkBox17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Stress"
             tools:layout_editor_absoluteX="157dp"
             tools:layout_editor_absoluteY="307dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="369dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="243dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="276dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="307dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="338dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="369dp" />
 
         <CheckBox
             android:id="@+id/checkBox18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Confus.e"
             tools:layout_editor_absoluteX="157dp"
             tools:layout_editor_absoluteY="338dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="278dp"
-            tools:layout_editor_absoluteY="572dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="508dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="541dp" />
 
         <CheckBox
             android:id="@+id/checkBox14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
+            android:text="Travail"
             tools:layout_editor_absoluteX="40dp"
             tools:layout_editor_absoluteY="572dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="508dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="541dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="572dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="278dp"
-            tools:layout_editor_absoluteY="508dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="278dp"
-            tools:layout_editor_absoluteY="541dp" />
 
         <TextView
             android:id="@+id/temps_textView2"
@@ -274,9 +114,10 @@
 
         <ImageView
             android:id="@+id/S1_imageView"
-            android:layout_width="67dp"
-            android:layout_height="82dp"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
             android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/S2_imageView"
             app:layout_constraintStart_toEndOf="@+id/S0_imageView"
@@ -287,7 +128,7 @@
             android:id="@+id/S2_imageView"
             android:layout_width="67dp"
             android:layout_height="82dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="6dp"
             app:layout_constraintEnd_toStartOf="@+id/S3_imageView"
             app:layout_constraintStart_toEndOf="@+id/S1_imageView"
@@ -296,18 +137,18 @@
 
         <ImageView
             android:id="@+id/S3_imageView"
-            android:layout_width="67dp"
-            android:layout_height="82dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="13dp"
+            android:layout_width="71dp"
+            android:layout_height="83dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/S4_imageView"
             app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
             app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_5_removebg_preview" />
 
         <ImageView
             android:id="@+id/S0_imageView"
-            android:layout_width="67dp"
-            android:layout_height="82dp"
+            android:layout_width="72dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/S1_imageView"
             app:layout_constraintStart_toStartOf="parent"
@@ -360,45 +201,37 @@
             app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText"
             app:layout_constraintVertical_bias="0.0" />
 
+        <CheckBox
+            android:id="@+id/checkBox26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Déprimé.e"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="242dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <CheckBox
         android:id="@+id/checkBox25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Isolement"
         tools:layout_editor_absoluteX="33dp"
         tools:layout_editor_absoluteY="369dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="243dp" />
 
     <CheckBox
         android:id="@+id/checkBox27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Tristesse"
         tools:layout_editor_absoluteX="33dp"
         tools:layout_editor_absoluteY="276dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="307dp" />
 
     <CheckBox
         android:id="@+id/checkBox29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Solitude"
         tools:layout_editor_absoluteX="33dp"
         tools:layout_editor_absoluteY="338dp" />
 
@@ -406,7 +239,7 @@
         android:id="@+id/checkBox30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Fatigue"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="243dp" />
 
@@ -414,23 +247,15 @@
         android:id="@+id/checkBox31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Ennui"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="276dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="307dp" />
 
     <CheckBox
         android:id="@+id/checkBox33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Irrité.e"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="369dp" />
 
@@ -438,7 +263,7 @@
         android:id="@+id/checkBox34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Calme"
         tools:layout_editor_absoluteX="285dp"
         tools:layout_editor_absoluteY="243dp" />
 
@@ -446,7 +271,7 @@
         android:id="@+id/checkBox35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Reposé.e"
         tools:layout_editor_absoluteX="285dp"
         tools:layout_editor_absoluteY="276dp" />
 
@@ -454,7 +279,7 @@
         android:id="@+id/checkBox36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Energique"
         tools:layout_editor_absoluteX="285dp"
         tools:layout_editor_absoluteY="307dp" />
 
@@ -462,7 +287,7 @@
         android:id="@+id/checkBox37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Heureux.se"
         tools:layout_editor_absoluteX="285dp"
         tools:layout_editor_absoluteY="338dp" />
 
@@ -470,31 +295,23 @@
         android:id="@+id/checkBox38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Apaisé.e"
         tools:layout_editor_absoluteX="285dp"
         tools:layout_editor_absoluteY="369dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox39"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="338dp" />
 
     <CheckBox
         android:id="@+id/checkBox40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Ménage"
         tools:layout_editor_absoluteX="278dp"
         tools:layout_editor_absoluteY="572dp" />
 
     <CheckBox
         android:id="@+id/checkBox41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:layout_width="89dp"
+        android:layout_height="41dp"
+        android:text="Sport"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="508dp" />
 
@@ -502,7 +319,7 @@
         android:id="@+id/checkBox42"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="En famille"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="541dp" />
 
@@ -518,7 +335,7 @@
         android:id="@+id/checkBox44"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Dormir"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="508dp" />
 
@@ -526,7 +343,7 @@
         android:id="@+id/checkBox45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Repos"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="541dp" />
 
@@ -534,7 +351,7 @@
         android:id="@+id/checkBox46"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Art"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="572dp" />
 
@@ -542,7 +359,7 @@
         android:id="@+id/checkBox47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Lecture"
         tools:layout_editor_absoluteX="278dp"
         tools:layout_editor_absoluteY="508dp" />
 
@@ -550,7 +367,7 @@
         android:id="@+id/checkBox48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="Balade"
         tools:layout_editor_absoluteX="278dp"
         tools:layout_editor_absoluteY="541dp" />
 

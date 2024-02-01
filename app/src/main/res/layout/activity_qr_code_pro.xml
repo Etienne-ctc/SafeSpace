@@ -7,6 +7,21 @@
     android:background="#CCE0F8"
     tools:context=".QRCodePro">
 
+    <TextView
+        android:id="@+id/date_TextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="167dp"
+        android:text="QR Code"
+        android:textColor="#A78ADC"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/idIVQrcode_ImageView"
         android:layout_width="300dp"
@@ -14,10 +29,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="133dp"
+        android:layout_marginTop="204dp"
         android:layout_marginEnd="56dp"
         android:contentDescription="@string/qr_code"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

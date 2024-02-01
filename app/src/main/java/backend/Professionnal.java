@@ -3,11 +3,11 @@ package backend;
 import android.util.Log;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Professionnal extends User{
 
@@ -35,9 +35,9 @@ public class Professionnal extends User{
             }
             //Set homework
             try {
-                ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE pro_id=" + this.getUid()).get();
+                ResultSet result = new DataBaseSelect().execute("SELECT id,nom, etat From exercice WHERE pro_id=" + this.getUid()).get();
                 while (result != null && result.next()) {
-                    myHomeWorks.add(new HomeWork(result.getString(1),result.getBoolean(2),this));
+                    myHomeWorks.add(new HomeWork(result.getString(2),result.getBoolean(3),this,result.getString(1)));
 
                 }
             }catch(Exception e){
@@ -70,15 +70,33 @@ public class Professionnal extends User{
         throw new PatientDoesntExistException(string);
     }
 
-    public void createActivity(HomeWork hw){
+    public void createHomework(HomeWork hw){
         /**
          * Create the homework object
          * then create it in the database
          *
          */
     }
+    public void updateHomework(HomeWork hw){
+        //to do
+    }
+    public void deleteHomework(HomeWork hw){
+        //to do
+    }
     public void giveHomework(Patient p, HomeWork h){
+        //To do database
         p.addActivities(h);
+    }
+
+    public void createAppointement(Appointement app){
+        //To do
+
+    }
+    public void deleteAppointement(Appointement app){
+        //To do
+    }
+    public void updateAppointement(Appointement app){
+//To do
     }
 
     public String toString(){

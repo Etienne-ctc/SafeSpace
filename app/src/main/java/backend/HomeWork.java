@@ -8,8 +8,8 @@ public class HomeWork extends Activities {
 
 
 
-    public HomeWork(String name, boolean completion, Professionnal pro) {
-        super(name,completion);
+    public HomeWork(String name, boolean completion, Professionnal pro,String id) {
+        super(name,completion,id);
         this.professionnal=pro;
     }
 }

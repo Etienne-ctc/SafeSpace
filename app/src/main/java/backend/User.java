@@ -24,6 +24,15 @@ public class User{
     Type 1 = pro
     Type 2 = normal user
      */
+
+    /**
+     *
+     * @param name
+     * @param surname
+     * @param mail
+     * @param mdp
+     * @param pro
+     */
     public User(String name,String surname,String mail,String mdp,boolean pro){
         this.name=name;
         this.surname=surname;
@@ -33,6 +42,10 @@ public class User{
         addUser(mdp,pro);
     }
 
+    /**
+     *
+     * @param UID
+     */
     public User(String UID){
         activities=new ArrayList<Activities>();
         statistics=new ArrayList<Statistics>();
@@ -52,9 +65,9 @@ public class User{
         }
 
         try {
-            ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From acti WHERE user_id=" + this.getUid()).get();
+            ResultSet result = new DataBaseSelect().execute("SELECT id,nom, etat From acti WHERE user_id=" + this.getUid()).get();
             while (result != null && result.next()) {
-                activities.add(new Activities(result.getString(1),result.getBoolean(2)));
+                activities.add(new Activities(result.getString(2),result.getBoolean(3),result.getString(1)));
 
             }
         }catch(Exception e){
@@ -84,11 +97,18 @@ public class User{
     }
 
 
-
+    /**
+     *
+     */
     public void updateInfo(){
         //this link the values of the user to the database in case it was changed
     }
 
+    /**
+     *
+     * @param mdp
+     * @param pro
+     */
     public void addUser(String mdp,boolean pro){
         int type=0;
         if(pro){
@@ -102,6 +122,11 @@ public class User{
             Log.d("user","adding a person in database"+e.fillInStackTrace());
         }
     }
+
+    /**
+     *
+     * @param act
+     */
     public void addActivities(Activities act){
         String query;
         query= "INSERT INTO acti (user_id,nom,etat) VALUES ("+getUid()+",'"+act.name+"',false)";
@@ -113,15 +138,57 @@ public class User{
         }
         activities.add(act);
     }
-    public void updateActivities(Activities act){
 
-        //to do
-        /**
-         * 1st add to data base
-         * if it works
-         * change the value in the arraylist
-         */
+    /**
+     *
+     * @param act
+     */
+    public void updateActivities(Activities act) {
+        if (activities.contains(act) && !HomeWork.class.isInstance(act)) {
+            String query;
+            if (act.completion) {
+                query = "UPDATE acti SET etat=false WHERE id=" + act.id;
+            } else {
+                query = "UPDATE acti SET etat=true WHERE id=" + act.id;
+            }
+            Log.d("Param", query);
+            try {
+                new DataBaseUpdate().execute(query);
+                for(int j=0;j<activities.size();j++){
+                    if(activities.get(j).equals(act)){
+                        activities.get(j).completion=!activities.get(j).completion;
+                    }
+                }
+            } catch (Exception e) {
+                Log.d("Param", "setting add_patients" + e.fillInStackTrace());
+            }
+
+        }
+        if(activities.contains(act) && HomeWork.class.isInstance(act)){
+            String query;
+            if (act.completion) {
+                query = "UPDATE exercice SET etat=false WHERE id=" + act.id;
+            } else {
+                query = "UPDATE exercice SET etat=true WHERE id=" + act.id;
+            }
+            Log.d("Param", query);
+            try {
+                new DataBaseUpdate().execute(query);
+                for(int j=0;j<activities.size();j++){
+                    if(activities.get(j).equals(act)){
+                        activities.get(j).completion=!activities.get(j).completion;
+                    }
+                }
+            } catch (Exception e) {
+                Log.d("Param", "setting add_patients" + e.fillInStackTrace());
+            }
+        }
     }
+
+    /**
+     *
+     * @param stats
+     */
     public void addMood(Mood stats){
 
         String query;
@@ -140,6 +207,10 @@ public class User{
         statistics.get(0).addStatisticsValue(stats);
     }
 
+    /**
+     *
+     * @param stats
+     */
     public void addSleep(Sleep stats){
 
         String query;
@@ -157,6 +228,10 @@ public class User{
         statistics.get(1).addStatisticsValue(stats);
     }
 
+    /**
+     *
+     * @param stats
+     */
     public void removeSleep(StatisticsValues stats){
         //to do
         String query;
@@ -170,6 +245,11 @@ public class User{
         statistics.get(1).removeStatisticsValue(stats);
 
     }
+
+    /**
+     *
+     * @param stats
+     */
     public void removeMood(StatisticsValues stats){
         //to do
         String query;
@@ -184,6 +264,10 @@ public class User{
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString(){
         String str = "This are the info " + UID + " name " + name + " surname " + surname + " mail " + mail;
         Log.d("User", str);
@@ -206,24 +290,63 @@ public class User{
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
+        String query;
+        query = "UPDATE user SET mail='"+name+"' WHERE id="+getUid();
+
+        Log.d("user", query);
+        try{
+            new DataBaseUpdate().execute(query);
+        }catch (Exception e){
+            Log.d("user","setting name"+e.fillInStackTrace());
+        }
     }
 
     public String getSurname() {
         return surname;
     }
 
+    /**
+     *
+     * @param surname
+     */
     public void setSurname(String surname) {
         this.surname = surname;
+        String query;
+        query = "UPDATE user SET mail='"+surname+"' WHERE id="+getUid();
+
+        Log.d("user", query);
+        try{
+            new DataBaseUpdate().execute(query);
+        }catch (Exception e){
+            Log.d("user","setting surname"+e.fillInStackTrace());
+        }
     }
 
     public String getMail() {
         return mail;
     }
 
+    /**
+     *
+     * @param mail
+     */
     public void setMail(String mail) {
         this.mail = mail;
+        String query;
+        query = "UPDATE user SET mail='"+mail+"' WHERE id="+getUid();
+
+        Log.d("user", query);
+        try{
+            new DataBaseUpdate().execute(query);
+        }catch (Exception e){
+            Log.d("user","setting mail"+e.fillInStackTrace());
+        }
     }
     public ArrayList<Activities> getActivities(){
         return activities;

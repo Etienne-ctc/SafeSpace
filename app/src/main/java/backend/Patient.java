@@ -32,9 +32,9 @@ public class Patient extends User{
         }
         //set activities Homework
         try {
-            ResultSet result = new DataBaseSelect().execute("SELECT nom, etat From exercice WHERE patient_id=" + this.getUid()).get();
+            ResultSet result = new DataBaseSelect().execute("SELECT id,nom, etat From exercice WHERE patient_id=" + this.getUid()).get();
             while (result != null && result.next()) {
-                activities.add(new HomeWork(result.getString(1),result.getBoolean(2),professionnal));
+                activities.add(new HomeWork(result.getString(2),result.getBoolean(3),professionnal,result.getString(1)));
 
             }
         }catch(Exception e){
@@ -69,5 +69,16 @@ public class Patient extends User{
     }
     public Professionnal getProfessionnal() {
         return professionnal;
+    }
+    public void setProfessionnal(Professionnal p){
+        String query;
+        query = "UPDATE user SET pro_id="+p.UID+" WHERE id="+getUid();
+
+        Log.d("Patient", query);
+        try{
+            new DataBaseUpdate().execute(query);
+        }catch (Exception e){
+            Log.d("Patient","setting add_patients"+e.fillInStackTrace());
+        }
     }
 }

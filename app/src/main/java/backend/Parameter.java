@@ -22,7 +22,7 @@ public class Parameter {
      * This set the Humeur value and update it's value in the database too
      * @param humeur
      */
-    public void setHumeur(boolean humeur) {
+    public void updateHumeur(boolean humeur) {
         this.humeur = humeur;
         String query;
         if(humeur){
@@ -46,7 +46,7 @@ public class Parameter {
      * This set the Sommeil value and update it's value in the database too
      * @param sommeil
      */
-    public void setSommeil(boolean sommeil) {
+    public void updateSommeil(boolean sommeil) {
         this.sommeil = sommeil;
         String query;
         if(sommeil){
@@ -70,7 +70,7 @@ public class Parameter {
      * This set the to do value and update it's value in the database too
      * @param todo
      */
-    public void setTodo(boolean todo) {
+    public void updateTodo(boolean todo) {
         this.todo = todo;
         String query;
         if(todo){
@@ -94,7 +94,7 @@ public class Parameter {
      * This set the recap value and update it's value in the database too
      * @param recap
      */
-    public void setRecap(boolean recap) {
+    public void updateRecap(boolean recap) {
         this.recap = recap;
         String query;
         if(recap){
@@ -118,7 +118,7 @@ public class Parameter {
      * This set the add_patient value and update it's value in the database too
      * @param add_patients
      */
-    public void setAdd_patients(boolean add_patients) {
+    public void updateAdd_patients(boolean add_patients) {
         this.add_patients = add_patients;
         String query;
         if(add_patients){
@@ -142,7 +142,7 @@ public class Parameter {
      * This set the rdv value and update it's value in the database too
      * @param rdv
      */
-    public void setRdv(boolean rdv) {
+    public void updateRdv(boolean rdv) {
         this.rdv = rdv;
         String query;
         if(rdv){
@@ -163,5 +163,29 @@ public class Parameter {
     }
     public String toString(){
         return "uid:"+user_id+"rdv"+rdv+"add_patient"+add_patients+"recap"+recap+"to do"+todo+"humeur"+humeur+"sommeil"+sommeil;
+    }
+
+    public void setRdv(boolean aBoolean) {
+        this.rdv=aBoolean;
+    }
+
+    public void setAdd_patients(boolean aBoolean) {
+        this.add_patients=aBoolean;
+    }
+
+    public void setRecap(boolean aBoolean) {
+        this.recap=aBoolean;
+    }
+
+    public void setHumeur(boolean aBoolean) {
+        this.humeur=aBoolean;
+    }
+
+    public void setSommeil(boolean aBoolean) {
+        this.sommeil=aBoolean;
+    }
+
+    public void setTodo(boolean aBoolean) {
+        this.todo=aBoolean;
     }
 }

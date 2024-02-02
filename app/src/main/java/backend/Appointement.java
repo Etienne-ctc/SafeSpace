@@ -17,4 +17,16 @@ public class Appointement {
     public String toString(){
         return "RDV ::::date : "+ date + " patient :" + patient.name +" pro :" + professionnal.name + "notes "+ notes;
     }
+    public Date getDate(){
+        return date;
+    }
+    public Professionnal getProfessionnal(){
+        return professionnal;
+    }
+    public String getNotes(){
+        return  notes;
+    }
+    public Patient getPatient(){
+        return patient;
+    }
 }

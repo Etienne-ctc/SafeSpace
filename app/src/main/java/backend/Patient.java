@@ -47,7 +47,7 @@ public class Patient extends User{
                     appointements.add(new Appointement(this, result.getDate(2), this.professionnal, null));
             }
         }catch(Exception e){
-            Log.e("pro","Exception init", e.fillInStackTrace());
+            Log.e("patient","Exception init", e.fillInStackTrace());
         }
     }
 

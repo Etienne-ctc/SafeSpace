@@ -7,6 +7,8 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class Professionnal extends User{
@@ -45,11 +47,14 @@ public class Professionnal extends User{
             }
             //set appointements
             try {
-                ResultSet result = new DataBaseSelect().execute("SELECT patient_id, daterdv From rdv WHERE pro_id=" + this.getUid()).get();
+                String query = "SELECT patient_id, daterdv From rdv WHERE pro_id="+getUid();
+                ResultSet result = new DataBaseSelect().execute(query).get();
                 while (result != null && result.next()) {
                     try {
+
                         appointements.add(new Appointement(patients.get(this.getPatientID(result.getString(1))), result.getDate(2), this, null));
                     }catch(PatientDoesntExistException e){
+                        Log.e("pro","Exception init", e.fillInStackTrace());
                     }
 
                 }
@@ -63,40 +68,127 @@ public class Professionnal extends User{
 
     private int getPatientID(String string) throws PatientDoesntExistException {
         for (int i = 0; i < patients.size(); i++) {
-            if(patients.get(i).UID==string){
+            if(patients.get(i).UID.equals(string)){
                 return i;
             }
         }
         throw new PatientDoesntExistException(string);
     }
 
+    /**
+     *
+     * @param hw
+     */
     public void createHomework(HomeWork hw){
-        /**
-         * Create the homework object
-         * then create it in the database
-         *
-         */
+        String query;
+        query= "INSERT INTO exercice (patient_id,pro_id,nom,etat) VALUES(NULL ,"
+                +getUid()+",'"
+                +hw.name+"', false)";
+        Log.d("user", query);
+        try{
+            new DataBaseInsert().execute(query);
+        }catch (Exception e){
+            Log.d("Pro","adding a homework in database"+e.fillInStackTrace());
+        }
+        myHomeWorks.add(hw);
     }
+
+    /**
+     *
+     * @param hw
+     */
     public void updateHomework(HomeWork hw){
-        //to do
+        if (myHomeWorks.contains(hw)) {
+            String query;
+
+            query = "UPDATE exercice SET nom='"+hw.name+"' WHERE id=" + hw.id;
+
+            Log.d("Pro", query);
+            try {
+                new DataBaseUpdate().execute(query);
+
+                } catch (Exception e) {
+                Log.d("Pro", "changing homewok" + e.fillInStackTrace());
+            }
+        }
     }
+
     public void deleteHomework(HomeWork hw){
-        //to do
+        String query;
+        query= "DELETE FROM exercice WHERE id="+hw.id;
+        Log.d("Pro", query);
+        try{
+            new DataBaseDelete().execute(query);
+        }catch (Exception e){
+            Log.d("Pro","remove a homework in database"+e.fillInStackTrace());
+        }
+        myHomeWorks.remove(hw);
     }
     public void giveHomework(Patient p, HomeWork h){
-        //To do database
+        if (myHomeWorks.contains(h)) {
+            String query;
+
+            query = "UPDATE exercice SET patient_id='"+p.getUid()+"' WHERE id=" + h.id;
+
+            Log.d("Pro", query);
+            try {
+                new DataBaseUpdate().execute(query);
+
+            } catch (Exception e) {
+                Log.d("Pro", "changing association homewok" + e.fillInStackTrace());
+            }
+        }
         p.addActivities(h);
     }
 
     public void createAppointement(Appointement app){
-        //To do
+        String query;
+        query= "INSERT INTO rdv (pro_id,patient_id,daterdv) VALUES("
+                +getUid()+","
+                +app.getPatient().getUid()+",'"
+                +app.getDate()+"')";
+        Log.d("pro", query);
+        try{
+            new DataBaseInsert().execute(query);
+        }catch (Exception e){
+            Log.d("Pro","adding an appointement in database"+e.fillInStackTrace());
+        }
+        appointements.add(app);
 
     }
     public void deleteAppointement(Appointement app){
-        //To do
+        if(appointements.contains(app)){
+            String query;
+            query= "DELETE FROM rdv WHERE pro_id="+this.getUid()+" AND patient_id="+app.getPatient().getUid()+ " AND daterdv='"+ app.getDate()+"'";
+            Log.d("Pro", query);
+            try{
+                new DataBaseDelete().execute(query);
+            }catch (Exception e){
+                Log.d("Pro","remove an appoitenemtent in database"+e.fillInStackTrace());
+            }
+            appointements.remove(app);
+        }
+
     }
-    public void updateAppointement(Appointement app){
-//To do
+    public void updateAppointement(Appointement app, Date date){
+        if (appointements.contains(app)) {
+            String query;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+            String formattedDate = dateFormat.format(date);
+            String formattedAppDate = dateFormat.format(app.getDate());
+            query = "UPDATE rdv SET daterdv='"+formattedDate
+                    +"' WHERE pro_id=" + this.getUid()
+                    + " AND patient_id="+app.getPatient().getUid()
+                    + " AND daterdv='"+formattedAppDate+"'";
+
+            Log.d("Pro", query);
+            try {
+                new DataBaseUpdate().execute(query);
+
+            } catch (Exception e) {
+                Log.d("Pro", "changing date of appointement" + e.fillInStackTrace());
+            }
+        }
     }
 
     public String toString(){
@@ -105,9 +197,19 @@ public class Professionnal extends User{
         for(Patient p : patients){
             p.toString();
         }
-        for(Appointement a : appointements){
-            Log.d("pro",a.toString());
+        for(int i=0;i<appointements.size();i++){
+            Log.d("pro",appointements.get(i).toString());
         }
         return "";
+    }
+
+    public ArrayList<HomeWork> getMyHomeWorks(){
+        return myHomeWorks;
+    }
+    public ArrayList<Patient> getPatients(){
+        return patients;
+    }
+    public ArrayList<Appointement> getAppointements(){
+        return  appointements;
     }
 }

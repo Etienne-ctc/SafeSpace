@@ -9,6 +9,10 @@ public class Activities {
         this.completion=completion;
         this.id=id;
     }
+    public Activities(String name, boolean completion){
+        this.name=name;
+        this.completion=completion;
+    }
 
     public String getName() {
         return name;

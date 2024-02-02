@@ -12,4 +12,8 @@ public class HomeWork extends Activities {
         super(name,completion,id);
         this.professionnal=pro;
     }
+    public HomeWork(String name, boolean completion, Professionnal pro) {
+        super(name,completion);
+        this.professionnal=pro;
+    }
 }

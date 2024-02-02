@@ -28,16 +28,6 @@
             android:name=".CalendrierCreateEventsPro"
             android:exported="false" />
         <activity
-            android:name=".CalendarViewHolder"
-            android:exported="false" />
-        <activity
-            android:name=".CalendrierWeekPatient"
-            android:exported="false" />
-        <activity
-            android:name=".SettingsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_settings" />
-        <activity
             android:name=".CalendrierPatient"
             android:exported="false" />
         <activity
@@ -56,16 +46,10 @@
             android:name=".Parametres"
             android:exported="false" />
         <activity
-            android:name=".HumeurFocusPatient"
-            android:exported="false" />
-        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".CalendrierPro"
-            android:exported="false" />
-        <activity
-            android:name=".ListeRDVFocusPro"
             android:exported="false" />
         <activity
             android:name=".ListePatientPro"

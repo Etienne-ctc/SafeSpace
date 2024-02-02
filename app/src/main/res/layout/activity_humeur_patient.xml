@@ -7,376 +7,85 @@
     android:background="#CCE0F8"
     tools:context=".HumeurPatient">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#CCE0F8"
-        tools:context=".SommeilPatient"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="-94dp">
-
-        <CheckBox
-            android:id="@+id/checkBox22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Anxieux.se"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="307dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stress"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="307dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confus.e"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="338dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Travail"
-            tools:layout_editor_absoluteX="40dp"
-            tools:layout_editor_absoluteY="572dp" />
-
-        <TextView
-            android:id="@+id/temps_textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="154dp"
-            android:text="Pourquoi ?"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
-
-        <TextView
-            android:id="@+id/temps_textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="154dp"
-            android:text="Activités :"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText2" />
-
-        <TextView
-            android:id="@+id/humeur_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="158dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="159dp"
-            android:text="Humeur"
-            android:textColor="#A78ADC"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <SeekBar
-            android:id="@+id/qualite_sommeil_seekBar"
-            android:layout_width="327dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="46dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/S2_imageView"
-            tools:scrollbarSize="10sp" />
-
-        <ImageView
-            android:id="@+id/S4_imageView"
-            android:layout_width="67dp"
-            android:layout_height="82dp"
-            android:layout_marginEnd="7dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
-            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_6_removebg_preview" />
-
-        <ImageView
-            android:id="@+id/S1_imageView"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/S2_imageView"
-            app:layout_constraintStart_toEndOf="@+id/S0_imageView"
-            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
-            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_3_removebg_preview" />
-
-        <ImageView
-            android:id="@+id/S2_imageView"
-            android:layout_width="67dp"
-            android:layout_height="82dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="6dp"
-            app:layout_constraintEnd_toStartOf="@+id/S3_imageView"
-            app:layout_constraintStart_toEndOf="@+id/S1_imageView"
-            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
-            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_4_removebg_preview" />
-
-        <ImageView
-            android:id="@+id/S3_imageView"
-            android:layout_width="71dp"
-            android:layout_height="83dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/S4_imageView"
-            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
-            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_5_removebg_preview" />
-
-        <ImageView
-            android:id="@+id/S0_imageView"
-            android:layout_width="72dp"
-            android:layout_height="76dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/S1_imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
-            app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_2_removebg_preview" />
-
-        <EditText
-            android:id="@+id/commentaire_sommeil_editTextText"
-            android:layout_width="348dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="412dp"
-            android:layout_marginEnd="30dp"
-            android:ems="10"
-            android:hint="Commentaire :"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
-
-        <EditText
-            android:id="@+id/commentaire_sommeil_editTextText2"
-            android:layout_width="355dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="204dp"
-            android:layout_marginEnd="30dp"
-            android:ems="10"
-            android:hint="Commentaire :"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
-
-        <Button
-            android:id="@+id/valider_sommeil_button"
-            android:layout_width="99dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="152dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="166dp"
-            android:layout_marginBottom="17dp"
-            android:text="Valider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <CheckBox
-            android:id="@+id/checkBox26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Déprimé.e"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="242dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <CheckBox
-        android:id="@+id/checkBox25"
+        android:id="@+id/anx_checkBox22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Isolement"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="369dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="Anxieux.se"
+        app:layout_constraintBottom_toTopOf="@+id/iso_checkBox25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dep_checkBox26"
+        app:layout_constraintVertical_bias="1.0" />
 
     <CheckBox
-        android:id="@+id/checkBox27"
+        android:id="@+id/str_checkBox17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tristesse"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="276dp" />
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="2dp"
+        android:text="Stress"
+        app:layout_constraintBottom_toTopOf="@+id/con_checkBox18"
+        app:layout_constraintEnd_toStartOf="@+id/ene_checkBox36"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/anx_checkBox22"
+        app:layout_constraintTop_toBottomOf="@+id/enn_checkBox31" />
 
     <CheckBox
-        android:id="@+id/checkBox29"
+        android:id="@+id/con_checkBox18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Solitude"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="338dp" />
+        android:layout_marginTop="124dp"
+        android:text="Confus.e"
+        app:layout_constraintEnd_toStartOf="@+id/heu_checkBox37"
+        app:layout_constraintStart_toEndOf="@+id/sol_checkBox29"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
 
     <CheckBox
-        android:id="@+id/checkBox30"
+        android:id="@+id/tra_checkBox14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fatigue"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="243dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ennui"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="276dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Irrité.e"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="369dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calme"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="243dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reposé.e"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="276dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Energique"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="307dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Heureux.se"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="338dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Apaisé.e"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="369dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ménage"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="572dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox41"
-        android:layout_width="89dp"
-        android:layout_height="41dp"
-        android:text="Sport"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="508dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="En famille"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="541dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="572dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dormir"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="508dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox45"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Repos"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="541dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox46"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Art"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="572dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox47"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lecture"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="508dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox48"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Balade"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="541dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="10dp"
+        android:text="Travail"
+        app:layout_constraintBottom_toTopOf="@+id/commentaire_sommeil_editTextText"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/humeur_textView4"
+        android:id="@+id/temps_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="154dp"
+        android:text="Pourquoi ?"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <TextView
+        android:id="@+id/temps_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="154dp"
+        android:text="Activités :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText2" />
+
+    <TextView
+        android:id="@+id/humeur_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="159dp"
         android:text="Humeur"
         android:textColor="#A78ADC"
@@ -386,18 +95,312 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/valider_sommeil_button2"
-        android:layout_width="99dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="166dp"
-        android:layout_marginBottom="17dp"
-        android:text="Valider"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <SeekBar
+        android:id="@+id/qualite_sommeil_seekBar"
+        android:layout_width="327dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="46dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/S2_imageView"
+        tools:scrollbarSize="10sp" />
+
+    <ImageView
+        android:id="@+id/S4_imageView"
+        android:layout_width="67dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_6_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/S1_imageView"
+        android:layout_width="75dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/S2_imageView"
+        app:layout_constraintStart_toEndOf="@+id/S0_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_3_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/S2_imageView"
+        android:layout_width="67dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/S3_imageView"
+        app:layout_constraintStart_toEndOf="@+id/S1_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_4_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/S3_imageView"
+        android:layout_width="71dp"
+        android:layout_height="83dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/S4_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_5_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/S0_imageView"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/S1_imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humeur_textView"
+        app:srcCompat="@drawable/_370_test_1670866795_removebg_preview_2_removebg_preview" />
+
+    <EditText
+        android:id="@+id/commentaire_sommeil_editTextText"
+        android:layout_width="348dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="Commentaire :"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <EditText
+        android:id="@+id/commentaire_sommeil_editTextText2"
+        android:layout_width="355dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="Commentaire :"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+
+    <CheckBox
+        android:id="@+id/dep_checkBox26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="Déprimé.e"
+        app:layout_constraintEnd_toStartOf="@+id/fat_checkBox30"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <CheckBox
+        android:id="@+id/iso_checkBox25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="3dp"
+        android:text="Isolement"
+        app:layout_constraintBottom_toTopOf="@+id/commentaire_sommeil_editTextText2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/tri_checkBox27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="1dp"
+        android:text="Tristesse"
+        app:layout_constraintBottom_toTopOf="@+id/anx_checkBox22"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dep_checkBox26" />
+
+    <CheckBox
+        android:id="@+id/sol_checkBox29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:text="Solitude"
+        app:layout_constraintBottom_toTopOf="@+id/iso_checkBox25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anx_checkBox22" />
+
+    <CheckBox
+        android:id="@+id/fat_checkBox30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="44dp"
+        android:text="Fatigue"
+        app:layout_constraintEnd_toStartOf="@+id/cal_checkBox34"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <CheckBox
+        android:id="@+id/enn_checkBox31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:text="Ennui"
+        app:layout_constraintStart_toEndOf="@+id/tri_checkBox27"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <CheckBox
+        android:id="@+id/irr_checkBox33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="3dp"
+        android:text="Irrité.e"
+        app:layout_constraintBottom_toTopOf="@+id/commentaire_sommeil_editTextText2"
+        app:layout_constraintStart_toEndOf="@+id/iso_checkBox25" />
+
+    <CheckBox
+        android:id="@+id/cal_checkBox34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="56dp"
+        android:text="Calme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <CheckBox
+        android:id="@+id/rep_checkBox35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="36dp"
+        android:text="Reposé.e"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <CheckBox
+        android:id="@+id/ene_checkBox36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="Energique"
+        app:layout_constraintBottom_toTopOf="@+id/heu_checkBox37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rep_checkBox35" />
+
+    <CheckBox
+        android:id="@+id/heu_checkBox37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="24dp"
+        android:text="Heureux.se"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualite_sommeil_seekBar" />
+
+    <CheckBox
+        android:id="@+id/apa_checkBox38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="3dp"
+        android:text="Apaisé.e"
+        app:layout_constraintBottom_toTopOf="@+id/commentaire_sommeil_editTextText2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/men_checkBox40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="10dp"
+        android:text="Ménage"
+        app:layout_constraintBottom_toTopOf="@+id/commentaire_sommeil_editTextText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/spo_checkBox41"
+        android:layout_width="89dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="Sport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText2" />
+
+    <CheckBox
+        android:id="@+id/fam_checkBox42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="En famille"
+        app:layout_constraintBottom_toTopOf="@+id/tra_checkBox14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spo_checkBox41" />
+
+    <CheckBox
+        android:id="@+id/dor_checkBox44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="45dp"
+        android:text="Dormir"
+        app:layout_constraintEnd_toStartOf="@+id/lec_checkBox47"
+        app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText2" />
+
+    <CheckBox
+        android:id="@+id/repos_checkBox45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:text="Repos"
+        app:layout_constraintBottom_toTopOf="@+id/art_checkBox46"
+        app:layout_constraintEnd_toStartOf="@+id/bal_checkBox48"
+        app:layout_constraintTop_toBottomOf="@+id/dor_checkBox44"
+        app:layout_constraintVertical_bias="0.566" />
+
+    <CheckBox
+        android:id="@+id/art_checkBox46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="10dp"
+        android:text="Art"
+        app:layout_constraintBottom_toTopOf="@+id/commentaire_sommeil_editTextText"
+        app:layout_constraintStart_toEndOf="@+id/fam_checkBox42" />
+
+    <CheckBox
+        android:id="@+id/lec_checkBox47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="52dp"
+        android:text="Lecture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText2" />
+
+    <CheckBox
+        android:id="@+id/bal_checkBox48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="Balade"
+        app:layout_constraintBottom_toTopOf="@+id/men_checkBox40"
+        app:layout_constraintStart_toEndOf="@+id/dor_checkBox44"
+        app:layout_constraintTop_toBottomOf="@+id/lec_checkBox47" />
+
+    <Button
+        android:id="@+id/valider_humeur_button"
+        android:layout_width="113dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
+        android:text="Valider"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/commentaire_sommeil_editTextText"
         app:layout_constraintVertical_bias="0.0" />

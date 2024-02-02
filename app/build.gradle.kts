@@ -55,4 +55,5 @@ dependencies {
     implementation("com.google.zxing:core:3.5.0")
     implementation("androidx.core:core:1.12.0")
     implementation ("mysql:mysql-connector-java:5.1.49")
+    implementation("org.apache.commons:commons-lang3:3.7")
 }

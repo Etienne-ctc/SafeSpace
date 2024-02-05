@@ -29,6 +29,9 @@ public class HomePatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_patient);
 
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("id");
+
         // Notifications Test
         createNotify();
 
@@ -94,6 +97,7 @@ public class HomePatient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent cal_patient = new Intent(HomePatient.this, CalendrierPatient.class);
+                cal_patient.putExtra("id", id);
                 startActivity(cal_patient);
             }
         });

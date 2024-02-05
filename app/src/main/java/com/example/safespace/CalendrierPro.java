@@ -36,7 +36,9 @@ public class CalendrierPro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendrier_pro);
+
         events=findViewById(R.id.events_ListView);
+
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
 

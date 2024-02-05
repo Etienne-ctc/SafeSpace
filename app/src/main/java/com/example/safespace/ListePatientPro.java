@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -24,7 +25,6 @@ public class ListePatientPro extends AppCompatActivity {
         Intent intent = getIntent();
         String id_pro = intent.getStringExtra("id");
         Professionnal pro = new Professionnal(id_pro, true);
-
         liste_patients = findViewById(R.id.patients_ListView);
         liste_patients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

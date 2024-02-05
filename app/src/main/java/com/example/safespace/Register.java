@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,17 +45,15 @@ public class Register extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mdp.equals(mdp_check)){
-                    //User user;
+                if (mdp.getText().toString().equals(mdp_check.getText().toString())){
+                    User user;
                     if(mode.equals(Boolean.FALSE)) {
-                        // Send to database for patient
-                        /*user = new User(String.valueOf(nom.getText()), String.valueOf(prenom.getText()),
-                                String.valueOf(log.getText()), String.valueOf(mdp.getText()), false);*/
+                        user = new User(String.valueOf(nom.getText()), String.valueOf(prenom.getText()),
+                                String.valueOf(log.getText()), String.valueOf(mdp.getText()), false);
                     }
                     else if(mode.equals(Boolean.TRUE)){
-                        // Send to database for pro
-                        /*user = new User(String.valueOf(nom.getText()), String.valueOf(prenom.getText()),
-                                String.valueOf(log.getText()), String.valueOf(mdp.getText()), true);*/
+                        user = new User(String.valueOf(nom.getText()), String.valueOf(prenom.getText()),
+                                String.valueOf(log.getText()), String.valueOf(mdp.getText()), true);
                     }
                 }
                 else {

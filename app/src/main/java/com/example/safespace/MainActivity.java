@@ -23,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
     private Button connection;
     private Button register;
 
-
+    /*
+        Type 0 = normal user
+        Type 1 = pro
+        Type 2 = patient
+         */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

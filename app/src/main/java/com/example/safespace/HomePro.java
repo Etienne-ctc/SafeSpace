@@ -18,6 +18,9 @@ public class HomePro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_pro);
 
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("id");
+
         param = findViewById(R.id.param_button);
         param.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +45,7 @@ public class HomePro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent patients_intent = new Intent(HomePro.this, ListePatientPro.class);
+                patients_intent.putExtra("id", id);
                 startActivity(patients_intent);
             }
         });

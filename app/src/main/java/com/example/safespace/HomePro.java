@@ -36,6 +36,7 @@ public class HomePro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent cal_pro_intent = new Intent(HomePro.this, CalendrierPro.class);
+                cal_pro_intent.putExtra("id", id);
                 startActivity(cal_pro_intent);
             }
         });

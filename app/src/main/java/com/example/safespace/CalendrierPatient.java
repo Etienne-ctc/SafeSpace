@@ -33,7 +33,7 @@ public class CalendrierPatient extends AppCompatActivity {
                 //date.setText(Date);
 
                 LocalDate selectedDate = LocalDate.of(year,month + 1,dayOfMonth);
-                setEventAdpater(selectedDate);
+                //setEventAdpater(selectedDate);
             }
         });
 
@@ -42,12 +42,12 @@ public class CalendrierPatient extends AppCompatActivity {
 
     }
 
-    private void setEventAdpater(LocalDate date)
+    /*private void setEventAdpater(LocalDate date)
     {
         ArrayList<Event> dailyEvents = Event.eventsForDate(date);
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
         events.setAdapter(eventAdapter);
-    }
+    }*/
 
     private void createTestEvent(){
         Event newEvent = new Event("Test", LocalDate.of(2024,1,16), LocalTime.of(12,0,0));

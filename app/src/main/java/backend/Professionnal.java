@@ -154,7 +154,6 @@ public class Professionnal extends User{
             Log.d("Pro","adding an appointement in database"+e.fillInStackTrace());
         }
         appointements.add(app);
-
     }
     public void deleteAppointement(Appointement app){
         if(appointements.contains(app)){

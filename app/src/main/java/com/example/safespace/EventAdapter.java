@@ -15,9 +15,11 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class EventAdapter extends ArrayAdapter<Event> {
+import backend.*;
 
-    public EventAdapter(@NonNull Context context, List<Event> events)
+public class EventAdapter extends ArrayAdapter<Appointement> {
+
+    public EventAdapter(@NonNull Context context, List<Appointement> events)
     {
         super(context, 0, events);
     }
@@ -26,14 +28,14 @@ public class EventAdapter extends ArrayAdapter<Event> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
     {
-        Event event = getItem(position);
+        Appointement event = getItem(position);
 
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.event_cell, parent, false);
 
         TextView eventCellTV = convertView.findViewById(R.id.eventCellTV);
 
-        String eventTitle = event.getName() + " " + formattedTime(event.getTime());
+        String eventTitle = event.getNotes() + " " + event.getDate();
         eventCellTV.setText(eventTitle);
         return convertView;
     }

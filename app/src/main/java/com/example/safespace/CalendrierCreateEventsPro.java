@@ -12,14 +12,23 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Date;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+
+import backend.Appointement;
+import backend.DataBaseSelect;
+import backend.Patient;
+import backend.Professionnal;
 
 public class CalendrierCreateEventsPro extends AppCompatActivity {
     private EditText titre_rdv;
     private TextView date_rdv;
     private String date_passed;
     private Spinner heure_rdv;
+    private Spinner spinner_patients;
     private Button valider;
 
     @Override
@@ -27,13 +36,14 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendrier_create_events_pro);
 
-        titre_rdv = findViewById(R.id.titreRDV_editTextText);
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("id");
+        Date date = Date.valueOf(intent.getStringExtra("date"));
+        Professionnal pro = new Professionnal(id, true);
 
         // Récuperer la date depuis l'activité parente
-        Intent intent = getIntent();
-        date_passed = intent.getStringExtra("date");
         date_rdv = findViewById(R.id.dateRDV_TextView);
-        date_rdv.setText(date_passed);
+        date_rdv.setText(String.valueOf(date));
 
         // Spinner pour les heures de rdv
         heure_rdv = findViewById(R.id.heureRDV_spinner);
@@ -44,6 +54,10 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         heure_rdv.setAdapter(adapter);
+
+        // Spinner pour les patients
+        spinner_patients = findViewById(R.id.patients_spinner);
+        processAdapter(pro);
 
         // Boutton pour valider le rdv créé
         valider = findViewById(R.id.validerRDV_button);
@@ -59,12 +73,22 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
                 // Traitement pour l'heure
                 String selected = heure_rdv.getSelectedItem().toString();
                 selected = selected.substring(0, selected.length()-1);
+                date.setHours(Integer.parseInt(selected));
 
                 // Traitement pour la date
                 String[] elem = date_passed.split("-");
                 Toast.makeText(CalendrierCreateEventsPro.this, elem[2], Toast.LENGTH_LONG).show();
 
-                createTestEvent(name_rdv, elem, Integer.valueOf(selected));
+                //Traitement pour le patient
+                String patient_selected = spinner_patients.getSelectedItem().toString();
+                String[] patientCute = patient_selected.split(" ");
+
+                //createTestEvent(name_rdv, elem, Integer.valueOf(selected));
+
+                Patient patient = new Patient(getIdPatient(patientCute[0], patientCute[1]));
+                Appointement appointement = new Appointement(patient, date, pro, name_rdv);
+                pro.createAppointement(appointement);
+
                 Intent back = new Intent(CalendrierCreateEventsPro.this, CalendrierPro.class);
                 startActivity(back);
             }
@@ -76,4 +100,36 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
                 LocalTime.of(heure,0,0));
         Event.eventsList.add(newEvent);
     }
+
+    private void processAdapter(Professionnal pro){
+        ArrayList<Patient> patients = pro.getPatients();
+        ArrayList<String> list_nom = new ArrayList<>();
+
+        for(Patient patient : patients){
+            list_nom.add(patient.getName() + " " + patient.getSurname());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
+                android.R.layout.simple_spinner_dropdown_item, list_nom);
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+
+        spinner_patients.setAdapter(adapter);
+
+    }
+
+    private String getIdPatient(String nom, String prenom){
+        String ret = null;
+        try {
+            String query = "SELECT id FROM user WHERE nom='" + nom + "' AND prenom='" + prenom + "'";
+            ResultSet result = new DataBaseSelect().execute(query).get();
+            if (result != null && result.next()) {
+                ret = result.getString(1);
+            }
+
+        }catch (Exception e){
+            ret = null;
+        }
+        return ret;
+    }
+
 }

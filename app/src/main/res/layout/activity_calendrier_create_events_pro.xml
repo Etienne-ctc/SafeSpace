@@ -34,6 +34,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateRDV_TextView" />
 
+    <Spinner
+        android:id="@+id/patients_spinner"
+        android:layout_width="271dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heureRDV_spinner" />
+
     <TextView
         android:id="@+id/dateRDV_TextView"
         android:layout_width="209dp"
@@ -55,13 +66,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="159dp"
-        android:layout_marginTop="68dp"
         android:layout_marginEnd="159dp"
+        android:layout_marginBottom="90dp"
         android:text="Valider"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heureRDV_spinner" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/titreRDV_editTextText"

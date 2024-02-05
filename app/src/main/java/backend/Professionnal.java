@@ -47,12 +47,12 @@ public class Professionnal extends User{
             }
             //set appointements
             try {
-                String query = "SELECT patient_id, daterdv From rdv WHERE pro_id="+getUid();
+                String query = "SELECT patient_id, daterdv,note From rdv WHERE pro_id="+getUid();
                 ResultSet result = new DataBaseSelect().execute(query).get();
                 while (result != null && result.next()) {
                     try {
 
-                        appointements.add(new Appointement(patients.get(this.getPatientID(result.getString(1))), result.getDate(2), this, null));
+                        appointements.add(new Appointement(patients.get(this.getPatientID(result.getString(1))), result.getDate(2), this, result.getString(3)));
                     }catch(PatientDoesntExistException e){
                         Log.e("pro","Exception init", e.fillInStackTrace());
                     }
@@ -143,10 +143,11 @@ public class Professionnal extends User{
 
     public void createAppointement(Appointement app){
         String query;
-        query= "INSERT INTO rdv (pro_id,patient_id,daterdv) VALUES("
+        query= "INSERT INTO rdv (pro_id,patient_id,daterdv,note) VALUES("
                 +getUid()+","
                 +app.getPatient().getUid()+",'"
-                +app.getDate()+"')";
+                +app.getDate()+"','"
+                +app.getNotes() +"')";
         Log.d("pro", query);
         try{
             new DataBaseInsert().execute(query);

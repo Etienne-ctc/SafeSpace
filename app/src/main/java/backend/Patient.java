@@ -42,9 +42,9 @@ public class Patient extends User{
         }
         //set appointements
         try {
-            ResultSet result = new DataBaseSelect().execute("SELECT pro_id, daterdv From rdv WHERE patient_id=" + this.getUid()).get();
+            ResultSet result = new DataBaseSelect().execute("SELECT pro_id, daterdv,note From rdv WHERE patient_id=" + this.getUid()).get();
             while (result != null && result.next()) {
-                    appointements.add(new Appointement(this, result.getDate(2), this.professionnal, null));
+                    appointements.add(new Appointement(this, result.getDate(2), this.professionnal, result.getString(3)));
             }
         }catch(Exception e){
             Log.e("patient","Exception init", e.fillInStackTrace());

@@ -29,6 +29,7 @@ public class CalendrierPatient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendrier_patient);
+        events = findViewById(R.id.patients_ListView);
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
@@ -38,7 +39,6 @@ public class CalendrierPatient extends AppCompatActivity {
         setAppointementAdapter(patient, aujDate);
 
         date = findViewById(R.id.date_TextView);
-        events = findViewById(R.id.patients_ListView);
 
         cal = findViewById(R.id.calendar_CalendarView);
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {

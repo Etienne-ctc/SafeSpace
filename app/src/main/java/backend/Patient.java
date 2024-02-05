@@ -81,4 +81,7 @@ public class Patient extends User{
             Log.d("Patient","setting add_patients"+e.fillInStackTrace());
         }
     }
+    public ArrayList<Appointement> getAppointements(){
+        return appointements;
+    }
 }

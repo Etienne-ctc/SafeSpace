@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -17,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Objects;
 
 import backend.*;
 
@@ -34,13 +36,16 @@ public class CalendrierPro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendrier_pro);
-
+        events=findViewById(R.id.events_ListView);
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
+
         Professionnal pro = new Professionnal(id, true);
 
         Calendar calendar = Calendar.getInstance();
         Date aujDate = new Date(calendar.getTimeInMillis());
+        Log.d("CalendPro",aujDate.getDay()+" day");
+        Log.d("calendpro",aujDate+ " date");
         SetAppointementAdapter(pro, aujDate);
 
         // Récupération des rdv pour le jour courant
@@ -59,8 +64,9 @@ public class CalendrierPro extends AppCompatActivity {
                 //internDate = dayOfMonth+"-"+(month+1)+"-"+year;
                 //LocalDate selectedDate = LocalDate.of(year,month + 1,dayOfMonth);
                 //setEventAdpater(selectedDate);
-
-                date = new Date(year, month, dayOfMonth);
+                Log.d("onselectdaycange",year +" year");
+                date = new Date(year-1900, month, dayOfMonth);
+                Log.d("onselectdaychange",date+"");
                 SetAppointementAdapter(pro, date);
             }
         });
@@ -98,9 +104,11 @@ public class CalendrierPro extends AppCompatActivity {
     private void SetAppointementAdapter(Professionnal pro, Date date){
         ArrayList<Appointement> rdv_lists = pro.getAppointements();
         ArrayList<Appointement> new_lists = new ArrayList<>();
-
         for(Appointement app : rdv_lists){
-            if(app.getDate().getDay() == date.getDay()){
+            Log.d("Setapp",app.getDate().getTime()+" first date"+ date.getTime());
+            if(app.getDate().equals(date)){
+                Log.d("Setapp","first");
+
                 new_lists.add(app);
             }
         }
@@ -108,4 +116,5 @@ public class CalendrierPro extends AppCompatActivity {
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), new_lists);
         events.setAdapter(eventAdapter);
     }
+
 }

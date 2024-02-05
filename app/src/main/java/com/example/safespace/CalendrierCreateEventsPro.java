@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -39,8 +40,9 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         Date date = Date.valueOf(intent.getStringExtra("date"));
+        Log.d("procreat",id +"pro");
         Professionnal pro = new Professionnal(id, true);
-
+        titre_rdv=findViewById(R.id.titreRDV_editTextText);
         // Récuperer la date depuis l'activité parente
         date_rdv = findViewById(R.id.dateRDV_TextView);
         date_rdv.setText(String.valueOf(date));
@@ -70,22 +72,24 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
                 // Traitement pour l'intitulé
                 String name_rdv = titre_rdv.getText().toString();
 
-                // Traitement pour l'heure
-                String selected = heure_rdv.getSelectedItem().toString();
-                selected = selected.substring(0, selected.length()-1);
-                date.setHours(Integer.parseInt(selected));
+                // Traitement pour l'heure To solve in a looooong futur
+                //String selected = heure_rdv.getSelectedItem().toString();
+                //selected = selected.substring(0, selected.length()-1);
+                //Log.d("create app",selected);
+                //date.setHours(Integer.parseInt(selected));
 
                 // Traitement pour la date
-                String[] elem = date_passed.split("-");
-                Toast.makeText(CalendrierCreateEventsPro.this, elem[2], Toast.LENGTH_LONG).show();
+                //String[] elem = date_passed.split("-");
+                //Toast.makeText(CalendrierCreateEventsPro.this, elem[2], Toast.LENGTH_LONG).show();
 
                 //Traitement pour le patient
                 String patient_selected = spinner_patients.getSelectedItem().toString();
                 String[] patientCute = patient_selected.split(" ");
 
                 //createTestEvent(name_rdv, elem, Integer.valueOf(selected));
-
+                Log.d("patientcreate",patientCute[0]+ patientCute[1]);
                 Patient patient = new Patient(getIdPatient(patientCute[0], patientCute[1]));
+
                 Appointement appointement = new Appointement(patient, date, pro, name_rdv);
                 pro.createAppointement(appointement);
 
@@ -120,7 +124,8 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
     private String getIdPatient(String nom, String prenom){
         String ret = null;
         try {
-            String query = "SELECT id FROM user WHERE nom='" + nom + "' AND prenom='" + prenom + "'";
+            String query = "SELECT id FROM user WHERE prenom='" + nom + "' AND nom='" + prenom + "'";
+            Log.d("patientcreate",query);
             ResultSet result = new DataBaseSelect().execute(query).get();
             if (result != null && result.next()) {
                 ret = result.getString(1);

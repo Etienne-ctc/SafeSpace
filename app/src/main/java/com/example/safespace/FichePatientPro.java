@@ -9,6 +9,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
+
+import backend.*;
+
 public class FichePatientPro extends AppCompatActivity {
     private TextView fiche_patient;
     private TextView nom_patient;
@@ -29,14 +35,23 @@ public class FichePatientPro extends AppCompatActivity {
         setContentView(R.layout.activity_fiche_patient_pro);
 
         Intent this_intent = getIntent();
-        String nom_patients = this_intent.getStringExtra("nom_patient");
+        String UID = this_intent.getStringExtra("UID");
+        Patient patient = new Patient(UID);
 
         fiche_patient = findViewById(R.id.fiche_patient_textView);
         nom_patient = findViewById(R.id.nom_patient_textView);
-        nom_patient.setText(nom_patients);
+        nom_patient.setText(String.valueOf(patient.getName() + " " + patient.getSurname()));
 
         prochain_rdv = findViewById(R.id.prochain_rdv_textView);
         date_rdv = findViewById(R.id.date_rdv_textView);
+        ArrayList<Appointement> rdv_lists = patient.getAppointements();
+        Calendar calendar = Calendar.getInstance();
+        Date aujDate = new Date(calendar.getTimeInMillis());
+        for(Appointement app : rdv_lists){
+            if(app.getDate().getDay() >= aujDate.getDay()){
+                date_rdv.setText(app.getDate().toString());
+            }
+        }
 
         humeur = findViewById(R.id.humeur_patient_textView);
         sommeil = findViewById(R.id.sommeil_patient_textView);

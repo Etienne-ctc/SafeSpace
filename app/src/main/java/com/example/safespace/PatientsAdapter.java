@@ -12,23 +12,24 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import backend.*;
 
-public class PatientsAdapter extends ArrayAdapter<Patients> {
+public class PatientsAdapter extends ArrayAdapter<Patient> {
 
-    public PatientsAdapter(@NonNull Context context, List<Patients> patients) { super(context, 0, patients); }
+    public PatientsAdapter(@NonNull Context context, List<Patient> patients) { super(context, 0, patients); }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
     {
-        Patients patients = getItem(position);
+        Patient patients = getItem(position);
 
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.event_cell, parent, false);
 
         TextView patientCellTV = convertView.findViewById(R.id.eventCellTV);
 
-        String patientsTitle = patients.getPatients();
+        String patientsTitle = patients.getName() + " " + patients.getSurname();
         patientCellTV.setText(patientsTitle);
         return convertView;
     }

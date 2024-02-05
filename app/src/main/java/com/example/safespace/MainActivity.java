@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import java.sql.ResultSet;
 
 import backend.*;
 
@@ -34,12 +37,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Check user in BDD
-
-
-                // Retour patient ou pro
-                Toast.makeText(MainActivity.this, "BDD not check", Toast.LENGTH_LONG).show();
-                Intent home_intent = new Intent(MainActivity.this, HomePatient.class);
-                startActivity(home_intent);
+                try{
+                    String query = "SELECT id,pro_id,typ From user WHERE mail='"+log.getText()+"' AND mdp='"+password.getText()+"'";
+                    ResultSet result = new DataBaseSelect().execute(query).get();
+                    if (result != null && result.next()) {
+                        if(result.getInt(3)==2){
+                            Intent home_intent = new Intent(MainActivity.this, HomePatient.class);
+                            home_intent.putExtra("id", result.getString(1));
+                            startActivity(home_intent);
+                        }
+                        if(result.getInt(3)==1){
+                            Intent home_intent = new Intent(MainActivity.this, HomePro.class);
+                            home_intent.putExtra("id", result.getString(1));
+                            startActivity(home_intent);
+                        }
+                        if(result.getInt(3)==0){
+                            Intent home_intent = new Intent(MainActivity.this, HomePatient.class);
+                            home_intent.putExtra("id", result.getString(1));
+                            startActivity(home_intent);
+                        }
+                    }
+                } catch(Exception e){
+                    Log.e("patient","Exception init user info", e.fillInStackTrace());
+                    Toast.makeText(MainActivity.this, "Identifiant ou mot de passe incorrect", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

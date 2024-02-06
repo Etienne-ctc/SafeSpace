@@ -25,11 +25,13 @@ public class ListePatientPro extends AppCompatActivity {
         Intent intent = getIntent();
         String id_pro = intent.getStringExtra("id");
         Professionnal pro = new Professionnal(id_pro, true);
+
         liste_patients = findViewById(R.id.patients_ListView);
         liste_patients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent fiche_patients_intent = new Intent(ListePatientPro.this, FichePatientPro.class);
+                fiche_patients_intent.putExtra("id", id_pro);
                 fiche_patients_intent.putExtra("UID", String.valueOf(pro.getPatients().get(position).getUid()));
                 startActivity(fiche_patients_intent);
             }

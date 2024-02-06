@@ -35,7 +35,9 @@ public class FichePatientPro extends AppCompatActivity {
         setContentView(R.layout.activity_fiche_patient_pro);
 
         Intent this_intent = getIntent();
+        String id_pro = this_intent.getStringExtra("id");
         String UID = this_intent.getStringExtra("UID");
+
         Patient patient = new Patient(UID);
 
         fiche_patient = findViewById(R.id.fiche_patient_textView);
@@ -66,6 +68,8 @@ public class FichePatientPro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent exo_intent = new Intent(FichePatientPro.this, CreateExercicesPro.class);
+                exo_intent.putExtra("id", id_pro);
+                exo_intent.putExtra("UID", UID);
                 startActivity(exo_intent);
             }
         });

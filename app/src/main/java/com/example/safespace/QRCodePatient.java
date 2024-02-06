@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.PackageManagerCompat;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.Image;
 import android.os.Bundle;
@@ -30,16 +31,23 @@ import com.google.mlkit.vision.common.InputImage;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import backend.*;
+
 public class QRCodePatient extends AppCompatActivity {
     private EditText test;
     private PreviewView previewView;
     private ListenableFuture<ProcessCameraProvider> cameraProviderListenableFuture;
     private String permission = android.Manifest.permission.CAMERA;
+    private Patient patient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_patient);
+
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("id");
+        patient = new Patient(id);
 
         test = findViewById(R.id.texte_editText);
         previewView = findViewById(R.id.cameraPreview);
@@ -104,6 +112,7 @@ public class QRCodePatient extends AppCompatActivity {
                             for(Barcode barcode : barcodes){
                                 final String getValue = barcode.getRawValue();
                                 test.setText(getValue);
+                                patient.setLinkPatientToPro(getValue);
                             }
 
                             image.close();

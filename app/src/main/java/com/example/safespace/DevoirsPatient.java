@@ -39,6 +39,7 @@ public class DevoirsPatient extends AppCompatActivity {
             public void onClick(View v) {
                 // Send to BDD with checkbox is checked or not
                 Intent back_intent = new Intent(DevoirsPatient.this, HomePatient.class);
+                back_intent.putExtra("id",id);
                 startActivity(back_intent);
             }
         });

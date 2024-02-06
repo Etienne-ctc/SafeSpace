@@ -107,7 +107,7 @@ public class User{
 
         String query;
 
-        query = "UPDATE user SET pro_id='"+uid+"' WHERE id=" + this.getUid();
+        query = "UPDATE userofapp SET pro_id="+uid+" WHERE id=" + this.getUid();
 
         Log.d("user", query);
         try {

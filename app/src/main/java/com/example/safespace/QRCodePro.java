@@ -24,21 +24,24 @@ public class QRCodePro extends AppCompatActivity {
     private Button back;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
-    String CODE_TEXT = "M. Truc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_pro);
 
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("id");
+
         qrCodeIV = findViewById(R.id.idIVQrcode_ImageView);
-        initQRCode(CODE_TEXT);
+        initQRCode(id);
 
         back = findViewById(R.id.back_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent back_intent = new Intent(QRCodePro.this, HomePro.class);
+                back_intent.putExtra("id", id);
                 startActivity(back_intent);
             }
         });

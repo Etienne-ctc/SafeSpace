@@ -103,9 +103,21 @@ public class User{
     /**
      *
      */
-    public void updateInfo(){
-        //this link the values of the user to the database in case it was changed
+    public void setLinkPatientToPro(String uid) {
+
+        String query;
+
+        query = "UPDATE user SET pro_id='"+uid+"' WHERE id=" + this.getUid();
+
+        Log.d("user", query);
+        try {
+            new DataBaseUpdate().execute(query);
+
+        } catch (Exception e) {
+            Log.d("user", "setting a pro" + e.fillInStackTrace());
+        }
     }
+
 
     /**
      *

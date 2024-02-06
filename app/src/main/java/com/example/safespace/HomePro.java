@@ -27,6 +27,7 @@ public class HomePro extends AppCompatActivity {
             public void onClick(View v) {
                 Intent param_intent = new Intent(HomePro.this, Parametres.class);
                 param_intent.putExtra("type", "pro");
+                param_intent.putExtra("id", id);
                 startActivity(param_intent);
             }
         });

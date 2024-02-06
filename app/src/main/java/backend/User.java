@@ -14,6 +14,7 @@ public class User{
     protected String name;
     protected String surname;
     protected String mail;
+
     public Parameter parameter;
     protected String UID;
 
@@ -353,5 +354,13 @@ public class User{
     }
     public ArrayList<Statistics> getStatistics(){
         return statistics;
+    }
+
+    public Parameter getParameter() {
+        return parameter;
+    }
+
+    public void setParameter(Parameter parameter) {
+        this.parameter = parameter;
     }
 }

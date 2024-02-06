@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
+
+import backend.*;
 
 public class Notifications extends AppCompatActivity {
     private Switch rdv;
@@ -16,10 +19,26 @@ public class Notifications extends AppCompatActivity {
     private Switch sommeil;
     private Switch to_do;
 
+    private Button valider;
+
+    private Professionnal pro;
+    private Patient patient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
+
+        Intent intent = getIntent();
+        String type = intent.getStringExtra("type");
+        String id = intent.getStringExtra("id");
+        if(type.equals("pro")){
+            pro = new Professionnal(id, true);
+        }
+        else {
+            patient = new Patient(id);
+        }
+
 
         // Pro's switch
         rdv = findViewById(R.id.rdv_switch);
@@ -38,8 +57,6 @@ public class Notifications extends AppCompatActivity {
         Boolean to_do_state = to_do.isChecked();
 
         // Visibilty depending on the type
-        Intent this_intent = getIntent();
-        String type = this_intent.getStringExtra("type");
         if(type.equals("pro")){
             humeur.setVisibility(View.GONE);
             sommeil.setVisibility(View.GONE);
@@ -51,5 +68,35 @@ public class Notifications extends AppCompatActivity {
             recap.setVisibility(View.GONE);
         }
 
+        valider = findViewById(R.id.valider_notif_button);
+        valider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(type.equals("pro")){
+                    Parameter parameter = pro.getParameter();
+                    if(rdv_state){
+                        parameter.updateRdv(rdv_state);
+                    }
+                    if(patients_state){
+                        parameter.updateAdd_patients(patients_state);
+                    }
+                    if(recap_state){
+                        parameter.updateRecap(recap_state);
+                    }
+                }
+                else {
+                    Parameter parameter = patient.getParameter();
+                    if(humeur_state){
+                        parameter.updateHumeur(humeur_state);
+                    }
+                    if(sommeil_state){
+                        parameter.updateSommeil(sommeil_state);
+                    }
+                    if(to_do_state){
+                        parameter.updateTodo(to_do_state);
+                    }
+                }
+            }
+        });
     }
 }

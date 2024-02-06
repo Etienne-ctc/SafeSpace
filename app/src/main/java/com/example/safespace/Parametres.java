@@ -24,16 +24,17 @@ public class Parametres extends AppCompatActivity {
 
         Intent this_intent = getIntent();
         String type = this_intent.getStringExtra("type");
-        Integer id = this_intent.getIntExtra("id_patient", 0);
+        //Integer id = this_intent.getIntExtra("id_patient", 0);
+        String id = this_intent.getStringExtra("id");
 
         nom = findViewById(R.id.nom_textView);
         prenom = findViewById(R.id.prenom_textView);
         mail = findViewById(R.id.mail_textView);
         // When bdd online
-        //initTextView(id);
+        initTextView(id);
 
         theme = findViewById(R.id.themes_switch);
-        Boolean theme_state = theme.isChecked();
+        //Boolean theme_state = theme.isChecked();
 
         notif = findViewById(R.id.notif_textView);
         notif.setOnClickListener(new View.OnClickListener() {
@@ -41,13 +42,14 @@ public class Parametres extends AppCompatActivity {
             public void onClick(View v) {
                 Intent notif_param = new Intent(Parametres.this, Notifications.class);
                 notif_param.putExtra("type", type);
+                notif_param.putExtra("id", id);
                 startActivity(notif_param);
             }
         });
     }
 
-    private void initTextView(Integer id){
-        User user = new User(String.valueOf(id));
+    private void initTextView(String id){
+        User user = new User(id);
         nom.setText(nom.getText() + user.getName());
         prenom.setText(prenom.getText() + user.getSurname());
         mail.setText(mail.getText() + user.getMail());

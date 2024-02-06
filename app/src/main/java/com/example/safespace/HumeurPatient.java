@@ -127,18 +127,10 @@ public class HumeurPatient extends AppCompatActivity {
                 initComponents();
                 gatherInfos();
 
-                if(comm_pourquoi != null){
-                    // Send to BDD
-                }
-
-                if(comm_activites != null){
-                    // Send to BDD
-                }
-
                 Calendar calendar = Calendar.getInstance();
                 Date aujDate = new Date(calendar.getTimeInMillis());
 
-                Mood mood = new Mood(seekBar_res, aujDate, pourquoi_to_bdd, activites_to_bdd);
+                Mood mood = new Mood(seekBar_res, aujDate, pourquoi_to_bdd, activites_to_bdd, comm_pourquoi, comm_activites);
                 patient.addMood(mood);
 
                 Intent back_intent = new Intent(HumeurPatient.this, HomePatient.class);

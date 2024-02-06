@@ -77,14 +77,11 @@ public class SommeilPatient extends AppCompatActivity {
 
                     // Traitemtent commentaire du sommeil
                     String commentaire = String.valueOf(comm.getText());
-                    if(commentaire != null) {
-                        /* Send to BDD */
-                    }
 
                     Calendar calendar = Calendar.getInstance();
                     Date aujDate = new Date(calendar.getTimeInMillis());
 
-                    Sleep sleep = new Sleep(qualite, aujDate, duree);
+                    Sleep sleep = new Sleep(qualite, aujDate, duree, commentaire);
                     patient.addSleep(sleep);
 
                     Toast.makeText(SommeilPatient.this, "Les informations ont bien été prises en compte", Toast.LENGTH_LONG).show();

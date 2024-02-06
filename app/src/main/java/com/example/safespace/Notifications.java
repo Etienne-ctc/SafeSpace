@@ -90,6 +90,11 @@ public class Notifications extends AppCompatActivity {
                     parameter.updateTodo(!to_do_state);
 
                 }
+
+                Intent back_intent = new Intent(Notifications.this, Parametres.class);
+                back_intent.putExtra("type", type);
+                back_intent.putExtra("id", id);
+                startActivity(back_intent);
             }
         });
     }

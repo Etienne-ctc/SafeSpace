@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class Parametres extends AppCompatActivity {
     private TextView mail;
     private Switch theme;
     private TextView notif;
+    private Button retour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class Parametres extends AppCompatActivity {
         theme = findViewById(R.id.themes_switch);
         //Boolean theme_state = theme.isChecked();
 
-        notif = findViewById(R.id.notif_textView);
+        notif = findViewById(R.id.notif_Button);
         notif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +46,21 @@ public class Parametres extends AppCompatActivity {
                 notif_param.putExtra("type", type);
                 notif_param.putExtra("id", id);
                 startActivity(notif_param);
+            }
+        });
+
+        retour = findViewById(R.id.retour_param_button);
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back_intent;
+                if(type.equals("pro")){
+                    back_intent = new Intent(Parametres.this, HomePro.class);
+                }
+                else {
+                    back_intent = new Intent(Parametres.this, HomePatient.class);
+                }
+                startActivity(back_intent);
             }
         });
     }

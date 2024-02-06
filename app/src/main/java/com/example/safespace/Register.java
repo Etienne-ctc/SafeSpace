@@ -31,6 +31,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         prenom = findViewById(R.id.prenom_editTextText);
         nom = findViewById(R.id.nom_editTextText);
 
@@ -55,6 +56,8 @@ public class Register extends AppCompatActivity {
                         user = new User(String.valueOf(nom.getText()), String.valueOf(prenom.getText()),
                                 String.valueOf(log.getText()), String.valueOf(mdp.getText()), true);
                     }
+                    Intent back_intent = new Intent(Register.this, MainActivity.class);
+                    startActivity(back_intent);
                 }
                 else {
                     Toast.makeText(Register.this, "Les mots de passes doivent être égaux", Toast.LENGTH_LONG).show();

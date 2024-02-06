@@ -17,6 +17,8 @@ import android.content.pm.PackageManager;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Size;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,7 +36,7 @@ import java.util.concurrent.ExecutionException;
 import backend.*;
 
 public class QRCodePatient extends AppCompatActivity {
-    private EditText test;
+    private Button back;
     private PreviewView previewView;
     private ListenableFuture<ProcessCameraProvider> cameraProviderListenableFuture;
     private String permission = android.Manifest.permission.CAMERA;
@@ -49,7 +51,6 @@ public class QRCodePatient extends AppCompatActivity {
         String id = intent.getStringExtra("id");
         patient = new Patient(id);
 
-        test = findViewById(R.id.texte_editText);
         previewView = findViewById(R.id.cameraPreview);
 
         // Gestion des permissions pour utiliser la camera
@@ -59,6 +60,17 @@ public class QRCodePatient extends AppCompatActivity {
         else {
             ActivityCompat.requestPermissions(QRCodePatient.this, new String[]{permission},101);
         }
+
+        back = findViewById(R.id.back_qrcode_patient_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back_intent = new Intent(QRCodePatient.this, HomePatient.class);
+                back_intent.putExtra("id", id);
+                startActivity(back_intent);
+            }
+        });
+
     }
 
     // Si permission d'utiliser la cam -> init de la cam
@@ -111,7 +123,6 @@ public class QRCodePatient extends AppCompatActivity {
                             //Value returned by BARCODE -> send to BDD
                             for(Barcode barcode : barcodes){
                                 final String getValue = barcode.getRawValue();
-                                test.setText(getValue);
                                 patient.setLinkPatientToPro(getValue);
                             }
 

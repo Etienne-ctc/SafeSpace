@@ -23,12 +23,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/texte_editText"
+    <Button
+        android:id="@+id/back_qrcode_patient_button"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:layout_marginBottom="16dp"
-        android:text="QR_code"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Retour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

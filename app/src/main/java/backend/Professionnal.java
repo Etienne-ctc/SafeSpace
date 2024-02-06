@@ -25,7 +25,7 @@ public class Professionnal extends User{
             this.appointements=new ArrayList<Appointement>();
             //set patient list
             try {
-                ResultSet result = new DataBaseSelect().execute("SELECT id FROM user WHERE pro_id=" + UID).get();
+                ResultSet result = new DataBaseSelect().execute("SELECT id FROM userofapp WHERE pro_id=" + UID).get();
                 if (result != null){
                     while(result.next()){
                         patients.add(new Patient(result.getString(1)));

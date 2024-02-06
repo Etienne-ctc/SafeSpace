@@ -23,7 +23,7 @@ public class Patient extends User{
 
         //Set user's pro
         try {
-            ResultSet result = new DataBaseSelect().execute("SELECT * FROM user WHERE id=" + UID).get();
+            ResultSet result = new DataBaseSelect().execute("SELECT * FROM userofapp WHERE id=" + UID).get();
             if (result != null && result.next()) {
                 this.professionnal= new Professionnal(result.getString(7),false);
             }
@@ -72,7 +72,7 @@ public class Patient extends User{
     }
     public void setProfessionnal(Professionnal p){
         String query;
-        query = "UPDATE user SET pro_id="+p.UID+" WHERE id="+getUid();
+        query = "UPDATE userofapp SET pro_id="+p.UID+" WHERE id="+getUid();
 
         Log.d("Patient", query);
         try{

@@ -14,15 +14,15 @@ public class Statistics {
         this.values=new ArrayList<StatisticsValues>();
         try {
             if(name.equals("sleep")){
-                ResultSet result = new DataBaseSelect().execute("SELECT valeur, date,duration From "+name+" WHERE user_id=" + id).get();
+                ResultSet result = new DataBaseSelect().execute("SELECT valeur, date,duration,comment From "+name+" WHERE user_id=" + id).get();
                 while(result != null && result.next()) {
-                    values.add(new Sleep(result.getInt(1),result.getDate(2),result.getInt(3)));
+                    values.add(new Sleep(result.getInt(1),result.getDate(2),result.getInt(3),result.getString(4)));
                 }
             }
             if(name.equals("mood")){
-                ResultSet result = new DataBaseSelect().execute("SELECT valeur, date,context,activity From "+name+" WHERE user_id=" + id).get();
+                ResultSet result = new DataBaseSelect().execute("SELECT valeur, date,context,activity,comment,commAct From "+name+" WHERE user_id=" + id).get();
                 while (result != null && result.next()) {
-                    values.add(new Mood(result.getInt(1),result.getDate(2),result.getString(3),result.getString(4)));
+                    values.add(new Mood(result.getInt(1),result.getDate(2),result.getString(3),result.getString(4),result.getString(5),result.getString(6)));
                 }
             }
 

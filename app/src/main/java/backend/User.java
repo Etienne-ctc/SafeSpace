@@ -52,7 +52,7 @@ public class User{
         System.out.println("trying connection");
         parameter=new Parameter(UID);
         try{
-            ResultSet result = new DataBaseSelect().execute("SELECT * From user WHERE id="+UID).get();
+            ResultSet result = new DataBaseSelect().execute("SELECT * From userofapp WHERE id="+UID).get();
             if (result != null && result.next()) {
                 this.UID=result.getString(1);
                 this.surname=result.getString(2);
@@ -114,7 +114,7 @@ public class User{
         if(pro){
             type =1;
         }
-        String query = "INSERT INTO user (nom,prenom,mail,mdp,typ) VALUES ('"+this.name+"','"+this.surname+"','"+this.mail+"','"+mdp+"','"+type+"')";
+        String query = "INSERT INTO userofapp (nom,prenom,mail,mdp,typ) VALUES ('"+this.name+"','"+this.surname+"','"+this.mail+"','"+mdp+"','"+type+"')";
         Log.d("user", query);
         try{
             new DataBaseInsert().execute(query);
@@ -297,7 +297,7 @@ public class User{
     public void setName(String name) {
         this.name = name;
         String query;
-        query = "UPDATE user SET mail='"+name+"' WHERE id="+getUid();
+        query = "UPDATE userofapp SET mail='"+name+"' WHERE id="+getUid();
 
         Log.d("user", query);
         try{
@@ -318,7 +318,7 @@ public class User{
     public void setSurname(String surname) {
         this.surname = surname;
         String query;
-        query = "UPDATE user SET mail='"+surname+"' WHERE id="+getUid();
+        query = "UPDATE userofapp SET mail='"+surname+"' WHERE id="+getUid();
 
         Log.d("user", query);
         try{
@@ -339,7 +339,7 @@ public class User{
     public void setMail(String mail) {
         this.mail = mail;
         String query;
-        query = "UPDATE user SET mail='"+mail+"' WHERE id="+getUid();
+        query = "UPDATE userofapp SET mail='"+mail+"' WHERE id="+getUid();
 
         Log.d("user", query);
         try{

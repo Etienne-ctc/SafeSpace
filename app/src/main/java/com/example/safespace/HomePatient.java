@@ -31,6 +31,7 @@ public class HomePatient extends AppCompatActivity {
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
+        Boolean typ = intent.getBooleanExtra("type", false);
 
         // Notifications Test
         createNotify();
@@ -43,6 +44,7 @@ public class HomePatient extends AppCompatActivity {
                 param_intent.putExtra("type", "patient");
                 // add extra with patient id
                 param_intent.putExtra("id_patient", 2);
+                param_intent.putExtra("id", id);
                 startActivity(param_intent);
             }
         });
@@ -52,6 +54,7 @@ public class HomePatient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent day_intent = new Intent(HomePatient.this, DayActivitiesPatient.class);
+                day_intent.putExtra("id", id);
                 startActivity(day_intent);
             }
         });
@@ -61,6 +64,7 @@ public class HomePatient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent devoirs_intent = new Intent(HomePatient.this, DevoirsPatient.class);
+                devoirs_intent.putExtra("id", id);
                 startActivity(devoirs_intent);
             }
         });
@@ -70,6 +74,7 @@ public class HomePatient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent humeur_intent = new Intent(HomePatient.this, HumeurPatient.class);
+                humeur_intent.putExtra("id", id);
                 startActivity(humeur_intent);
             }
         });
@@ -79,18 +84,25 @@ public class HomePatient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent sommeil_intent = new Intent(HomePatient.this, SommeilPatient.class);
+                sommeil_intent.putExtra("id", id);
                 startActivity(sommeil_intent);
             }
         });
 
         addPro = findViewById(R.id.add_pro_button);
-        addPro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent code_patient = new Intent(HomePatient.this, QRCodePatient.class);
-                startActivity(code_patient);
-            }
-        });
+        if(typ){
+            addPro.setVisibility(View.GONE);
+        }
+        else {
+            addPro.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent code_patient = new Intent(HomePatient.this, QRCodePatient.class);
+                    code_patient.putExtra("id", id);
+                    startActivity(code_patient);
+                }
+            });
+        }
 
         cal = findViewById(R.id.calendrier_button);
         cal.setOnClickListener(new View.OnClickListener() {

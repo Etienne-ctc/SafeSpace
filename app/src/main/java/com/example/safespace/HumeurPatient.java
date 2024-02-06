@@ -12,8 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+
+import backend.*;
 
 public class HumeurPatient extends AppCompatActivity {
     private SeekBar humeur;
@@ -68,6 +72,10 @@ public class HumeurPatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_humeur_patient);
 
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("id");
+        Patient patient = new Patient(id);
+
         pourquoi = new ArrayList<String>();
         tab_pourquoi = new ArrayList<CheckBox>();
         activites = new ArrayList<String>();
@@ -118,13 +126,23 @@ public class HumeurPatient extends AppCompatActivity {
             public void onClick(View v) {
                 initComponents();
                 gatherInfos();
-                // Send all gathered data to BDD
-                // pourquoi_to_bdd
-                // comm_pourquoi
-                // activites_to_bdd
-                // comm_activities
+
+                if(comm_pourquoi != null){
+                    // Send to BDD
+                }
+
+                if(comm_activites != null){
+                    // Send to BDD
+                }
+
+                Calendar calendar = Calendar.getInstance();
+                Date aujDate = new Date(calendar.getTimeInMillis());
+
+                Mood mood = new Mood(seekBar_res, aujDate, pourquoi_to_bdd, activites_to_bdd);
+                patient.addMood(mood);
 
                 Intent back_intent = new Intent(HumeurPatient.this, HomePatient.class);
+                back_intent.putExtra("id", id);
                 startActivity(back_intent);
             }
         });

@@ -12,6 +12,12 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Date;
+import java.util.Calendar;
+
+import backend.Patient;
+import backend.Sleep;
+
 public class SommeilPatient extends AppCompatActivity {
     private TextView sommeil;
     private TextView duree;
@@ -31,6 +37,10 @@ public class SommeilPatient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sommeil_patient);
+
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("id");
+        Patient patient = new Patient(id);
 
         sommeil = findViewById(R.id.humeur_textView);
         duree = findViewById(R.id.temps_textView);
@@ -70,6 +80,12 @@ public class SommeilPatient extends AppCompatActivity {
                     if(commentaire != null) {
                         /* Send to BDD */
                     }
+
+                    Calendar calendar = Calendar.getInstance();
+                    Date aujDate = new Date(calendar.getTimeInMillis());
+
+                    Sleep sleep = new Sleep(qualite, aujDate, duree);
+                    patient.addSleep(sleep);
 
                     Toast.makeText(SommeilPatient.this, "Les informations ont bien été prises en compte", Toast.LENGTH_LONG).show();
                     Intent home_intent = new Intent(SommeilPatient.this, HomePatient.class);

@@ -13,22 +13,24 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class DevoirsAdapter extends ArrayAdapter<Devoirs> {
+import backend.Activities;
 
-    public DevoirsAdapter(@NonNull Context context, List<Devoirs> devoirs) { super(context, 0, devoirs); }
+public class DevoirsAdapter extends ArrayAdapter<Activities> {
+
+    public DevoirsAdapter(@NonNull Context context, List<Activities> devoirs) { super(context, 0, devoirs); }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
     {
-        Devoirs devoirs = getItem(position);
+        Activities activities = getItem(position);
 
         if (convertView == null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activities_cell, parent, false);
 
         CheckBox devoirCellTV = convertView.findViewById(R.id.activities_cell_checkBox);
 
-        String devoirTitle = devoirs.getDevoir();
+        String devoirTitle = activities.getName();
         devoirCellTV.setText(devoirTitle);
         return convertView;
     }

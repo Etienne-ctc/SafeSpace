@@ -13,4 +13,6 @@ public class HomeWork extends Activities {
         super(name,completion);
         this.professionnal=pro;
     }
+
+
 }

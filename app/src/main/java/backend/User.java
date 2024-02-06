@@ -3,6 +3,8 @@ package backend;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.apache.commons.lang3.ObjectUtils;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -116,12 +118,30 @@ public class User{
             type =1;
         }
         String query = "INSERT INTO userofapp (nom,prenom,mail,mdp,typ) VALUES ('"+this.name+"','"+this.surname+"','"+this.mail+"','"+mdp+"','"+type+"')";
+        String id=getIdFromDB();
+        this.UID = id;
+        String query2 ="INSERT INTO param (user_id,rdv,add_patients,recap,humeur,sommeil,todo) VALUES ("+this.getUid()+",false,false,false,false,false,false)";
         Log.d("user", query);
         try{
             new DataBaseInsert().execute(query);
+            new DataBaseInsert().execute(query2);
         }catch (Exception e){
             Log.d("user","adding a person in database"+e.fillInStackTrace());
         }
+    }
+
+    private String getIdFromDB() {
+        String i= "";
+        try {
+            ResultSet result = new DataBaseSelect().execute("SELECT id FROM userofapp ORDER BY id DESC LIMIT 1").get();
+            if (result != null && result.next()) {
+                i = String.valueOf(result.getInt(1));
+                return i;
+            }
+        }catch (Exception e){
+
+        }
+        return i;
     }
 
     /**

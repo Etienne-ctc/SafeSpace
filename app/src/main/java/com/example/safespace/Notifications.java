@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
@@ -73,28 +74,21 @@ public class Notifications extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(type.equals("pro")){
+                    Log.d("notif","this is a pro");
                     Parameter parameter = pro.getParameter();
-                    if(rdv_state){
-                        parameter.updateRdv(rdv_state);
-                    }
-                    if(patients_state){
-                        parameter.updateAdd_patients(patients_state);
-                    }
-                    if(recap_state){
-                        parameter.updateRecap(recap_state);
-                    }
+                    parameter.updateRdv(!rdv_state);
+
+                    parameter.updateAdd_patients(!patients_state);
+                    parameter.updateRecap(!recap_state);
+
                 }
                 else {
+                    Log.d("notif","this is a patient");
                     Parameter parameter = patient.getParameter();
-                    if(humeur_state){
-                        parameter.updateHumeur(humeur_state);
-                    }
-                    if(sommeil_state){
-                        parameter.updateSommeil(sommeil_state);
-                    }
-                    if(to_do_state){
-                        parameter.updateTodo(to_do_state);
-                    }
+                    parameter.updateHumeur(!humeur_state);
+                    parameter.updateSommeil(!sommeil_state);
+                    parameter.updateTodo(!to_do_state);
+
                 }
             }
         });

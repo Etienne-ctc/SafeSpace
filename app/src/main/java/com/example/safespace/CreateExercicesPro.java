@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +33,6 @@ public class CreateExercicesPro extends AppCompatActivity {
         Patient patient = new Patient(UID);
 
         intitule = findViewById(R.id.intitulé_homework_editTextText2);
-        String intitule_homework = String.valueOf(intitule.getText());
 
         nom = findViewById(R.id.nom_patient_homework_editTextText3);
         nom.setText(String.valueOf(patient.getName() + " " + patient.getSurname()));
@@ -41,8 +41,12 @@ public class CreateExercicesPro extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String intitule_homework = String.valueOf(intitule.getText());
+
                 HomeWork homeWork = new HomeWork(intitule_homework, false, professionnal);
-                professionnal.createHomework(homeWork);
+                String id = professionnal.createHomework(homeWork);
+                homeWork.setId(id);
+                Log.d("createhw",id + homeWork.toString());
                 professionnal.giveHomework(patient, homeWork);
 
                 Intent back_intent = new Intent(CreateExercicesPro.this, FichePatientPro.class);

@@ -20,4 +20,10 @@ public class Activities {
     public String toString(){
         return "name: "+name+" completion :"+completion;
     }
+    public String getId(){
+        return id;
+    }
+    public void setId(String id){
+        this.id=id;
+    }
 }

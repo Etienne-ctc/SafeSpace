@@ -79,18 +79,29 @@ public class Professionnal extends User{
      *
      * @param hw
      */
-    public void createHomework(HomeWork hw){
+    public String createHomework(HomeWork hw){
         String query;
+        String id=null;
         query= "INSERT INTO exercice (patient_id,pro_id,nom,etat) VALUES(NULL ,"
                 +getUid()+",'"
                 +hw.name+"', false)";
         Log.d("user", query);
         try{
             new DataBaseInsert().execute(query);
+
+            ResultSet result =new DataBaseSelect().execute("SELECT id FROM exercice ORDER BY id DESC LIMIT 1").get();
+            if (result != null && result.next()){
+                Log.d("creathw","in the if");
+                id=String.valueOf(result.getInt(1));
+                Log.d("creathw",id);
+                myHomeWorks.add(hw);
+                return id;
+            }
+
         }catch (Exception e){
             Log.d("Pro","adding a homework in database"+e.fillInStackTrace());
         }
-        myHomeWorks.add(hw);
+        return id;
     }
 
     /**

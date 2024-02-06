@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Check user in BDD
                 try{
-                    String query = "SELECT id,pro_id,typ From user WHERE mail='"+log.getText()+"' AND mdp='"+password.getText()+"'";
+                    String query = "SELECT id,pro_id,typ From userofapp WHERE mail='"+log.getText()+"' AND mdp='"+password.getText()+"'";
                     ResultSet result = new DataBaseSelect().execute(query).get();
+                    Log.d("Main", query);
                     if (result != null && result.next()) {
                         if(result.getInt(3)==2){
                             Intent home_intent = new Intent(MainActivity.this, HomePatient.class);
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 } catch(Exception e){
-                    Log.e("patient","Exception init user info", e.fillInStackTrace());
+                    Log.e("Main","Exception init user info", e.fillInStackTrace());
                     Toast.makeText(MainActivity.this, "Identifiant ou mot de passe incorrect", Toast.LENGTH_LONG).show();
                 }
             }

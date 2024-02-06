@@ -82,7 +82,7 @@ public class HumeurPatient extends AppCompatActivity {
         tab_activites = new ArrayList<CheckBox>();
 
         humeur = findViewById(R.id.qualite_sommeil_seekBar);
-        seekBar_res = humeur.getProgress();
+        humeur.setMax(5);
 
         dep = findViewById(R.id.dep_checkBox26);
         tri = findViewById(R.id.tri_checkBox27);
@@ -103,7 +103,6 @@ public class HumeurPatient extends AppCompatActivity {
         apa = findViewById(R.id.apa_checkBox38);
 
         comm1 = findViewById(R.id.commentaire_sommeil_editTextText2);
-        comm_pourquoi = String.valueOf(comm1.getText());
 
         spo = findViewById(R.id.spo_checkBox41);
         fam = findViewById(R.id.fam_checkBox42);
@@ -118,12 +117,15 @@ public class HumeurPatient extends AppCompatActivity {
         men = findViewById(R.id.men_checkBox40);
 
         comm2 = findViewById(R.id.commentaire_sommeil_editTextText);
-        comm_activites = String.valueOf(comm2.getText());
 
         valider = findViewById(R.id.valider_humeur_button);
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                seekBar_res = humeur.getProgress();
+                comm_pourquoi = String.valueOf(comm1.getText());
+                comm_activites = String.valueOf(comm2.getText());
+
                 initComponents();
                 gatherInfos();
 
@@ -141,6 +143,7 @@ public class HumeurPatient extends AppCompatActivity {
     }
 
     private void initComponents(){
+
         // tab_pourquoi
         tab_pourquoi.add(dep);
         tab_pourquoi.add(tri);

@@ -7,4 +7,7 @@ public abstract class StatisticsValues {
     protected int quality;
     protected Date date;
     protected String comment;
+    public String getComment(){
+        return comment;
+    }
 }

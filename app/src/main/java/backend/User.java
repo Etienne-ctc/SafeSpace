@@ -193,12 +193,14 @@ public class User{
     public void addMood(Mood stats){
 
         String query;
-        query= "INSERT INTO mood(user_id,valeur,date,context,activity) VALUES("
+        query= "INSERT INTO mood(user_id,valeur,date,context,activity,comment,commAct) VALUES("
                 +getUid()+","
                 +stats.quality+",'"
                 +stats.date+"','"
                 +stats.getContext()+"','"
-                +stats.getActivity()+"')";
+                +stats.getActivity()+"','"
+                +stats.getComment()+"','"
+                +stats.getCommAct()+"')";
         Log.d("user", query);
         try{
             new DataBaseInsert().execute(query);
@@ -215,11 +217,12 @@ public class User{
     public void addSleep(Sleep stats){
 
         String query;
-        query= "INSERT INTO sleep(user_id,valeur,date,duration) VALUES("
+        query= "INSERT INTO sleep(user_id,valeur,date,duration,comment) VALUES("
                 +getUid()+","
                 +stats.quality+",'"
                 +stats.date+"',"
-                +stats.getDuration()+")";
+                +stats.getDuration()
+                +",'"+stats.getComment()+"')";
         Log.d("user", query);
         try{
             new DataBaseInsert().execute(query);

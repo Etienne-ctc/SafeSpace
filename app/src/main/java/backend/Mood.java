@@ -20,6 +20,9 @@ public class Mood  extends StatisticsValues{
     public String getActivity(){
         return activity;
     }
+    public String getCommAct(){
+        return commAct;
+    }
     public String toString(){
         return "Mood activity : " + activity + "context "+ context+ " quality" + quality +" date "+date;
     }

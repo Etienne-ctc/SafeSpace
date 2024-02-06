@@ -124,11 +124,12 @@ public class CalendrierCreateEventsPro extends AppCompatActivity {
     private String getIdPatient(String nom, String prenom){
         String ret = null;
         try {
-            String query = "SELECT id FROM user WHERE prenom='" + nom + "' AND nom='" + prenom + "'";
+            String query = "SELECT id FROM userofapp WHERE prenom='" + nom + "' AND nom='" + prenom + "'";
             Log.d("patientcreate",query);
             ResultSet result = new DataBaseSelect().execute(query).get();
             if (result != null && result.next()) {
                 ret = result.getString(1);
+                Log.d("patientcreate",result.getString(1)+" ID");
             }
 
         }catch (Exception e){

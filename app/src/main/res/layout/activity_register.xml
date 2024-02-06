@@ -44,6 +44,7 @@
         android:layout_width="157dp"
         android:layout_height="48dp"
         android:layout_marginStart="128dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="128dp"
         android:layout_marginBottom="24dp"
         android:text="Valider"

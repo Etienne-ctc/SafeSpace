@@ -27,10 +27,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="154dp"
+        android:layout_marginBottom="30dp"
         android:text="Combien de temps avez-vous dormis ?"
+        app:layout_constraintBottom_toTopOf="@+id/heure_sommeil_seekBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/humeur_textView" />
 
@@ -39,12 +42,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="154dp"
         android:text="Quelle était la qualité de votre sommeil ?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="303dp" />
+        app:layout_constraintTop_toBottomOf="@+id/heure_sommeil_seekBar" />
 
     <SeekBar
         android:id="@+id/qualite_sommeil_seekBar"
@@ -161,18 +165,20 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
         android:layout_marginBottom="5dp"
         android:text="0h"
         app:layout_constraintBottom_toTopOf="@+id/heure_sommeil_seekBar"
-        tools:layout_editor_absoluteX="26dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="38dp"
         android:layout_marginBottom="5dp"
         android:text="24h"
         app:layout_constraintBottom_toTopOf="@+id/heure_sommeil_seekBar"
-        tools:layout_editor_absoluteX="349dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
